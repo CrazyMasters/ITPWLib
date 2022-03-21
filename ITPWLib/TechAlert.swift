@@ -21,7 +21,7 @@ public final class TechAlert{
         
         DispatchQueue.main.async {
             let presentWindow: UIView?
-            presentWindow = UIApplication.shared.keyWindow
+            presentWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 #if DEBUG
             
 #else
@@ -77,7 +77,7 @@ public final class TechAlert{
                             let objectsToShare = [data]
                                     let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
 //                                    activityVC.popoverPresentationController?.sourceView = button
-                            if let rootController = UIApplication.shared.keyWindow?.rootViewController {
+                            if let rootController = UIApplication.shared.windows.filter({$0.isKeyWindow}).first?.rootViewController {
                                     var currentController: UIViewController! = rootController
                                     while( currentController.presentedViewController != nil ) {
                                         currentController = currentController.presentedViewController
