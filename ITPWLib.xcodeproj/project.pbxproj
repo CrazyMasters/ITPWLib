@@ -11,6 +11,11 @@
 		6162056B27E85F8A00D09D3B /* ITPWLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6162056027E85F8A00D09D3B /* ITPWLib.framework */; };
 		6162057027E85F8A00D09D3B /* ITPWLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162056F27E85F8A00D09D3B /* ITPWLibTests.swift */; };
 		6162057127E85F8A00D09D3B /* ITPWLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 6162056327E85F8A00D09D3B /* ITPWLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6162058127E85FC600D09D3B /* ITPWLibExamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162058027E85FC600D09D3B /* ITPWLibExamplesApp.swift */; };
+		6162058327E85FC600D09D3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162058227E85FC600D09D3B /* ContentView.swift */; };
+		6162058527E85FC700D09D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6162058427E85FC700D09D3B /* Assets.xcassets */; };
+		6162058827E85FC700D09D3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6162058727E85FC700D09D3B /* Preview Assets.xcassets */; };
+		6162058D27E8601F00D09D3B /* TechAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162058C27E8601F00D09D3B /* TechAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,12 @@
 		6162056427E85F8A00D09D3B /* ITPWLib.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ITPWLib.docc; sourceTree = "<group>"; };
 		6162056A27E85F8A00D09D3B /* ITPWLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITPWLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6162056F27E85F8A00D09D3B /* ITPWLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITPWLibTests.swift; sourceTree = "<group>"; };
+		6162057E27E85FC600D09D3B /* ITPWLibExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITPWLibExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6162058027E85FC600D09D3B /* ITPWLibExamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITPWLibExamplesApp.swift; sourceTree = "<group>"; };
+		6162058227E85FC600D09D3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6162058427E85FC700D09D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6162058727E85FC700D09D3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6162058C27E8601F00D09D3B /* TechAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +58,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6162057B27E85FC600D09D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +73,7 @@
 			children = (
 				6162056227E85F8A00D09D3B /* ITPWLib */,
 				6162056E27E85F8A00D09D3B /* ITPWLibTests */,
+				6162057F27E85FC600D09D3B /* ITPWLibExamples */,
 				6162056127E85F8A00D09D3B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +83,7 @@
 			children = (
 				6162056027E85F8A00D09D3B /* ITPWLib.framework */,
 				6162056A27E85F8A00D09D3B /* ITPWLibTests.xctest */,
+				6162057E27E85FC600D09D3B /* ITPWLibExamples.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +93,7 @@
 			children = (
 				6162056327E85F8A00D09D3B /* ITPWLib.h */,
 				6162056427E85F8A00D09D3B /* ITPWLib.docc */,
+				6162058C27E8601F00D09D3B /* TechAlert.swift */,
 			);
 			path = ITPWLib;
 			sourceTree = "<group>";
@@ -83,6 +104,25 @@
 				6162056F27E85F8A00D09D3B /* ITPWLibTests.swift */,
 			);
 			path = ITPWLibTests;
+			sourceTree = "<group>";
+		};
+		6162057F27E85FC600D09D3B /* ITPWLibExamples */ = {
+			isa = PBXGroup;
+			children = (
+				6162058027E85FC600D09D3B /* ITPWLibExamplesApp.swift */,
+				6162058227E85FC600D09D3B /* ContentView.swift */,
+				6162058427E85FC700D09D3B /* Assets.xcassets */,
+				6162058627E85FC700D09D3B /* Preview Content */,
+			);
+			path = ITPWLibExamples;
+			sourceTree = "<group>";
+		};
+		6162058627E85FC700D09D3B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6162058727E85FC700D09D3B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +175,23 @@
 			productReference = 6162056A27E85F8A00D09D3B /* ITPWLibTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		6162057D27E85FC600D09D3B /* ITPWLibExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6162058927E85FC700D09D3B /* Build configuration list for PBXNativeTarget "ITPWLibExamples" */;
+			buildPhases = (
+				6162057A27E85FC600D09D3B /* Sources */,
+				6162057B27E85FC600D09D3B /* Frameworks */,
+				6162057C27E85FC600D09D3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ITPWLibExamples;
+			productName = ITPWLibExamples;
+			productReference = 6162057E27E85FC600D09D3B /* ITPWLibExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,6 +206,9 @@
 						CreatedOnToolsVersion = 13.3;
 					};
 					6162056927E85F8A00D09D3B = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					6162057D27E85FC600D09D3B = {
 						CreatedOnToolsVersion = 13.3;
 					};
 				};
@@ -168,6 +228,7 @@
 			targets = (
 				6162055F27E85F8A00D09D3B /* ITPWLib */,
 				6162056927E85F8A00D09D3B /* ITPWLibTests */,
+				6162057D27E85FC600D09D3B /* ITPWLibExamples */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +248,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6162057C27E85FC600D09D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6162058827E85FC700D09D3B /* Preview Assets.xcassets in Resources */,
+				6162058527E85FC700D09D3B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -194,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6162058D27E8601F00D09D3B /* TechAlert.swift in Sources */,
 				6162056527E85F8A00D09D3B /* ITPWLib.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +274,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6162057027E85F8A00D09D3B /* ITPWLibTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6162057A27E85FC600D09D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6162058327E85FC600D09D3B /* ContentView.swift in Sources */,
+				6162058127E85FC600D09D3B /* ITPWLibExamplesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -325,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -396,6 +476,7 @@
 		6162057827E85F8A00D09D3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FL98HY8592;
@@ -412,6 +493,7 @@
 		6162057927E85F8A00D09D3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FL98HY8592;
@@ -420,6 +502,64 @@
 				PRODUCT_BUNDLE_IDENTIFIER = itpw.ITPWLibTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6162058A27E85FC700D09D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ITPWLibExamples/Preview Content\"";
+				DEVELOPMENT_TEAM = FL98HY8592;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = itpw.ITPWLibExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6162058B27E85FC700D09D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ITPWLibExamples/Preview Content\"";
+				DEVELOPMENT_TEAM = FL98HY8592;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = itpw.ITPWLibExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -451,6 +591,15 @@
 			buildConfigurations = (
 				6162057827E85F8A00D09D3B /* Debug */,
 				6162057927E85F8A00D09D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6162058927E85FC700D09D3B /* Build configuration list for PBXNativeTarget "ITPWLibExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6162058A27E85FC700D09D3B /* Debug */,
+				6162058B27E85FC700D09D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
