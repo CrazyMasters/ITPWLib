@@ -22,11 +22,6 @@ public final class TechAlert{
         DispatchQueue.main.async {
             let presentWindow: UIView?
             presentWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-#if DEBUG
-            
-#else
-            return
-#endif
             guard let window = presentWindow else { return }
             //if this alert exists - we go away
             if window.subviews.contains(where: { (view) -> Bool in
@@ -101,7 +96,10 @@ public final class TechAlert{
             ])
             
             
+#if DEBUG
             window.addSubview(container)
+#endif
+            
         }
     }
 }
