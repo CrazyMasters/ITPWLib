@@ -13,6 +13,7 @@ internal struct OnStartAlertView: View {
     var close: () -> ()
     public var body: some View {
         ZStack{
+            Color.clear.ignoresSafeArea().disabled(true)
             if alert.alertType == .criticalDialog{
                 Color.white
                     .ignoresSafeArea()
@@ -46,11 +47,13 @@ internal struct OnStartAlertView: View {
                         HStack{
                             Spacer()
                             Text(button.title)
+                                .foregroundColor(.black)
                             Spacer()
                         }
                         .padding(10)
                         .background(Color(UIColor.lightGray))
                         .cornerRadius(8)
+                        .shadow(color: .black, radius: 1, x: 0, y: 0)
                     }
 
                 }

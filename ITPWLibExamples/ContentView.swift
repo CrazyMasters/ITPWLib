@@ -41,6 +41,7 @@ struct ContentView: View {
             Text("Test swiftui Alert")
                 .padding()
                 .onTapGesture {
+                    print("DID")
                     TechAlert().createTestTech()
                 }
             Spacer()

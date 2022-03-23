@@ -77,10 +77,12 @@ public final class TechAlert{
                 view.accessibilityIdentifier == "pop"
             }) {return}
             hostController.view.accessibilityIdentifier = "pop"
+//            currentController.view.isUserInteractionEnabled = alert.alertType == .simple
             hostController.view.translatesAutoresizingMaskIntoConstraints = false
             currentController.addChild(hostController)
             currentController.view.addSubview(hostController.view)
-            currentController.view.isUserInteractionEnabled = alert.alertType == .simple
+            
+            hostController.view.isUserInteractionEnabled = true
             NSLayoutConstraint.activate([
                 hostController.view.centerXAnchor.constraint(equalTo: currentController.view.centerXAnchor, constant: 0),
                 hostController.view.centerYAnchor.constraint(equalTo: currentController.view.centerYAnchor, constant: 0),
