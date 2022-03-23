@@ -7,12 +7,96 @@
 import UIKit
 import WebKit
 import PDFKit
+import SwiftUI
 
 
 public final class TechAlert{
     public init(){
         
     }
+    
+    ///Алерт сверху экрана, с текстом
+    public func createAlert(text: String) {
+        
+        DispatchQueue.main.async {
+            
+            guard let rootController = UIApplication.shared.windows.filter({$0.isKeyWindow}).first?.rootViewController else {return}
+            var currentController: UIViewController! = rootController
+            while( currentController.presentedViewController != nil ) {
+                currentController = currentController.presentedViewController
+            }
+            
+            let hostController = UIHostingController(rootView: AlertView(text: text, close: {
+                for child in currentController.children{
+                    withAnimation {
+                        child.view.removeFromSuperview()
+                    }
+                }
+            }))
+            if currentController.view.subviews.contains(where: { (view) -> Bool in
+                view.accessibilityIdentifier == text
+            }) {return}
+            hostController.view.accessibilityIdentifier = text
+            hostController.view.translatesAutoresizingMaskIntoConstraints = false
+            currentController.addChild(hostController)
+            currentController.view.addSubview(hostController.view)
+            NSLayoutConstraint.activate([
+                hostController.view.centerXAnchor.constraint(equalTo: currentController.view.centerXAnchor, constant: 0),
+                hostController.view.centerYAnchor.constraint(equalTo: currentController.view.centerYAnchor, constant: 0),
+                hostController.view.widthAnchor.constraint(equalTo: currentController.view.widthAnchor, constant: 0),
+                hostController.view.heightAnchor.constraint(equalTo: currentController.view.heightAnchor, constant: 0),
+            ])
+            
+            hostController.view.backgroundColor = .clear
+//            window.addSubview(hostController.view)
+            
+//            window.addSubview(container)
+
+            
+        }
+    }
+    
+    public func createTestTech() {
+        
+        DispatchQueue.main.async {
+            let alert = AlertModel.testValue2
+            guard let rootController = UIApplication.shared.windows.filter({$0.isKeyWindow}).first?.rootViewController else {return}
+            var currentController: UIViewController! = rootController
+            while( currentController.presentedViewController != nil ) {
+                currentController = currentController.presentedViewController
+            }
+            
+            let hostController = UIHostingController(rootView: OnStartAlertView(alert: alert, close: {
+                for child in currentController.children{
+                    withAnimation {
+                        child.view.removeFromSuperview()
+                    }
+                }
+            }))
+            if currentController.view.subviews.contains(where: { (view) -> Bool in
+                view.accessibilityIdentifier == "pop"
+            }) {return}
+            hostController.view.accessibilityIdentifier = "pop"
+            hostController.view.translatesAutoresizingMaskIntoConstraints = false
+            currentController.addChild(hostController)
+            currentController.view.addSubview(hostController.view)
+            currentController.view.isUserInteractionEnabled = alert.alertType == .simple
+            NSLayoutConstraint.activate([
+                hostController.view.centerXAnchor.constraint(equalTo: currentController.view.centerXAnchor, constant: 0),
+                hostController.view.centerYAnchor.constraint(equalTo: currentController.view.centerYAnchor, constant: 0),
+                hostController.view.widthAnchor.constraint(equalTo: currentController.view.widthAnchor, constant: 0),
+                hostController.view.heightAnchor.constraint(equalTo: currentController.view.heightAnchor, constant: 0),
+            ])
+            
+            hostController.view.backgroundColor = .clear
+//            window.addSubview(hostController.view)
+            
+//            window.addSubview(container)
+
+            
+        }
+    }
+    
     /// создает окно поверх приложения с html кодом ошибки
     ///  Не появится, если релиз билд
     /// - Parameters:

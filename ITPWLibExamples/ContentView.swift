@@ -10,25 +10,42 @@ import ITPWLib
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-            .onTapGesture {
-                TechAlert().HTMLAlertWindow(html: """
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
+        VStack {
+            Text("TEST HTML Alert")
+                .padding()
+                .onTapGesture {
+                    TechAlert().HTMLAlertWindow(html: """
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Page Title</title>
+    </head>
+    <body>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
 
-</body>
-</html>
+    </body>
+    </html>
 
-""")
+    """)
             }
+            HStack(){
+                Spacer()
+            }
+            Text("Test swiftui Alert")
+                .padding()
+                .onTapGesture {
+                    TechAlert().createAlert(text: "awdaw")
+                }
+            Text("Test swiftui Alert")
+                .padding()
+                .onTapGesture {
+                    TechAlert().createTestTech()
+                }
+            Spacer()
+        }
+        .background(Color.red.ignoresSafeArea())
     }
 }
 
