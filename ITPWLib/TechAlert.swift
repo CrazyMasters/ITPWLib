@@ -56,43 +56,64 @@ public final class TechAlert{
         }
     }
     
-    public func createTestTech() {
+    public func createTestTech(code: Int) {
         
         DispatchQueue.main.async {
-            let alert = AlertModel.testValue2
-            guard let rootController = UIApplication.shared.windows.filter({$0.isKeyWindow}).first?.rootViewController else {return}
-            var currentController: UIViewController! = rootController
-            while( currentController.presentedViewController != nil ) {
-                currentController = currentController.presentedViewController
+            let alert: AlertModel
+            switch code {
+            case 0:
+                alert = AlertModel.testValue0
+            case 1:
+                alert = AlertModel.testValue1
+            case 2:
+                alert = AlertModel.testValue2
+            case 3:
+                alert = AlertModel.testValue3
+            case 4:
+                alert = AlertModel.testValue4
+            default:
+                alert = AlertModel.testValue4
             }
+            //получаем окно
+            let presentWindow: UIView?
+            presentWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+            guard let window = presentWindow else { return }
+            //если нулевой алерт, то убираем уже существующий по идентификатору
+            if alert.alertType == .none{
+                for child in window.subviews{
+                    if child.accessibilityIdentifier == "pop"{
+                        child.removeFromSuperview()
+                    }
+                }
+                return
+            }
+            //если алерт уже показан - умираем
+            if window.subviews.contains(where: { (view) -> Bool in
+                view.accessibilityIdentifier == "pop"
+            }) {return}
             
+            //создаем контроллер, передаем тип алерта и функцию для закрытия
             let hostController = UIHostingController(rootView: OnStartAlertView(alert: alert, close: {
-                for child in currentController.children{
-                    withAnimation {
-                        child.view.removeFromSuperview()
+                for child in window.subviews{
+                    if child.accessibilityIdentifier == "pop"{
+                        child.removeFromSuperview()
                     }
                 }
             }))
-            if currentController.view.subviews.contains(where: { (view) -> Bool in
-                view.accessibilityIdentifier == "pop"
-            }) {return}
+            
+            //даем идентификатор окну алерта
             hostController.view.accessibilityIdentifier = "pop"
             hostController.view.translatesAutoresizingMaskIntoConstraints = false
-            currentController.addChild(hostController)
-            currentController.view.addSubview(hostController.view)
-            currentController.view.isUserInteractionEnabled = alert.alertType == .simple
+            
+            window.addSubview(hostController.view)
+            
             NSLayoutConstraint.activate([
-                hostController.view.centerXAnchor.constraint(equalTo: currentController.view.centerXAnchor, constant: 0),
-                hostController.view.centerYAnchor.constraint(equalTo: currentController.view.centerYAnchor, constant: 0),
-                hostController.view.widthAnchor.constraint(equalTo: currentController.view.widthAnchor, constant: 0),
-                hostController.view.heightAnchor.constraint(equalTo: currentController.view.heightAnchor, constant: 0),
+                hostController.view.centerXAnchor.constraint(equalTo: window.centerXAnchor, constant: 0),
+                hostController.view.centerYAnchor.constraint(equalTo: window.centerYAnchor, constant: 0),
+                hostController.view.widthAnchor.constraint(equalTo: window.widthAnchor, constant: 0),
+                hostController.view.heightAnchor.constraint(equalTo: window.heightAnchor, constant: 0),
             ])
-            
             hostController.view.backgroundColor = .clear
-//            window.addSubview(hostController.view)
-            
-//            window.addSubview(container)
-
             
         }
     }

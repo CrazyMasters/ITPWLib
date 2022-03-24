@@ -36,13 +36,42 @@ struct ContentView: View {
             Text("Test swiftui Alert")
                 .padding()
                 .onTapGesture {
-                    TechAlert().createAlert(text: "awdaw")
+                    TechAlert().createAlert(text: """
+akwfnijsang ajgndgni e  h r hnten tn rtn rbf b wrt nr n
+etn et
+ joet et
+y jetn tnejt
+n etn
+etne
+e ynet
+ yne
+ netoy
+etyythmetyhkteklhjerjhkjrnhr
+""")
                 }
-            Text("Test swiftui Alert")
-                .padding()
-                .onTapGesture {
-                    TechAlert().createTestTech()
-                }
+            HStack{
+                Text("type 1")
+                    .padding()
+                    .onTapGesture {
+                        TechAlert().createTestTech(code: 1)
+                    }
+                Text("type 2")
+                    .padding()
+                    .onTapGesture {
+                        TechAlert().createTestTech(code: 2)
+                    }
+                Text("type 3")
+                    .padding()
+                    .onTapGesture {
+                        TechAlert().createTestTech(code: 3)
+                    }
+                Text("type 4")
+                    .padding()
+                    .onTapGesture {
+                        TechAlert().createTestTech(code: 4)
+                    }
+            }
+            
             Spacer()
         }
         .background(Color.red.ignoresSafeArea())
