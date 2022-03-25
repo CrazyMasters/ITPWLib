@@ -8,32 +8,42 @@
 import SwiftUI
 
 internal class AsyncImageViewModel: ObservableObject{
-    @Published var image = UIImage()
+    @Published var image: UIImage?
     func getImage(url: String){
         Task{
             let uiImage = try await NetworkManager().getImage(url: url)
-            image = uiImage
+            DispatchQueue.main.async {
+                self.image = uiImage
+            }
+            
         }
     }
 }
-
+///async image that gets the image from url
 public struct AsyncImage: View {
-    @StateObject var vm = AsyncImageViewModel()
+    @StateObject private var vm = AsyncImageViewModel()
     @State var url: String
+    @State var contentMode: ContentMode
+    public init(url: String, contentMode: ContentMode){
+        self.url = url
+        self.contentMode = contentMode
+    }
     public var body: some View {
-        Image(uiImage: vm.image)
+        Image(uiImage: vm.image ?? UIImage())
             .resizable()
-            .scaledToFit()
-            .frame(width: 50, height: 50)
-            .onTapGesture {
-                vm.getImage(url: url)
+            .aspectRatio(contentMode: contentMode)
+            .onAppear {
+                if vm.image == nil{
+                 vm.getImage(url: url)
+                }
             }
+        
     }
 }
 
 struct AsyncImage_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncImage(url: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg")
+        AsyncImage(url: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", contentMode: .fit)
     }
 }
 //

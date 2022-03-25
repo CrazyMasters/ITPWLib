@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-public struct OnStartAlertView: View {
+internal struct OnStartAlertView: View {
     @StateObject var vm = OnStartViewModel()
-    var alert: AlertModel
-    var close: () -> ()
+    public var alert: AlertAPIModel
+    public var close: () -> ()
     @State var showing = false
     func startClosing(){
         withAnimation {
@@ -25,7 +25,7 @@ public struct OnStartAlertView: View {
 //        self.alert = alert
 //        self.close = close
 //    }
-    public var body: some View {
+     var body: some View {
         ZStack{
             Color.clear.ignoresSafeArea().disabled(true)
             if alert.alertType == .criticalDialog{
@@ -112,8 +112,3 @@ public struct OnStartAlertView: View {
     }
 }
 
-struct OnStartAlertView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnStartAlertView(alert: AlertModel.testValue2, close: {})
-    }
-}

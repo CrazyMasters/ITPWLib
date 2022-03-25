@@ -11,7 +11,7 @@ import Alamofire
 
 
 public class NetworkManager{
-    static var host = "https://fb14c25e-e7df-4fca-baef-90843943fca9.mock.pstmn.io/"
+    static var AlertHost = "https://fb14c25e-e7df-4fca-baef-90843943fca9.mock.pstmn.io/"
     enum APIError: Error {
         case detail(text: String)
         case authError
@@ -122,10 +122,10 @@ public class NetworkManager{
     }
     
     ///получаем uiimage из даты по юрлу
-    func get_alerts(appID: String) async throws -> AlertModel{
+    func get_alerts(appID: String) async throws -> AlertAPIModel{
         guard let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {throw APIError.detail(text: "")}
         let params: Parameters = ["app_id" : appID, "app_version" : appVersion]
-        let data = try await request(url: "\(NetworkManager.host)get_alert/", method: .get, params: params) as AlertModel
+        let data = try await request(url: "\(NetworkManager.AlertHost)get_alert/", method: .get, params: params) as AlertAPIModel
         return data
           
     }

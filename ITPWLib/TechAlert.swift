@@ -55,7 +55,7 @@ public final class TechAlert{
             
         }
     }
-    private func createOnStartAlert(alert: AlertModel){
+    private func createOnStartAlert(alert: AlertAPIModel){
         DispatchQueue.main.async {
             //получаем окно
             let presentWindow: UIView?
@@ -97,7 +97,7 @@ public final class TechAlert{
                 hostController.view.widthAnchor.constraint(equalTo: window.widthAnchor, constant: 0),
                 hostController.view.heightAnchor.constraint(equalTo: window.heightAnchor, constant: 0),
             ])
-            hostController.view.backgroundColor = .clear
+            hostController.view.backgroundColor = UIColor.clear
             
         }
     }
@@ -110,20 +110,20 @@ public final class TechAlert{
     }
     
     public func createTestTech(code: Int) {
-        let alert: AlertModel
+        let alert: AlertAPIModel
         switch code {
         case 0:
-            alert = AlertModel.testValue0
+            alert = AlertAPIModel.testValue0
         case 1:
-            alert = AlertModel.testValue1
+            alert = AlertAPIModel.testValue1
         case 2:
-            alert = AlertModel.testValue2
+            alert = AlertAPIModel.testValue2
         case 3:
-            alert = AlertModel.testValue3
+            alert = AlertAPIModel.testValue3
         case 4:
-            alert = AlertModel.testValue4
+            alert = AlertAPIModel.testValue4
         default:
-            alert = AlertModel.testValue4
+            alert = AlertAPIModel.testValue4
         }
         createOnStartAlert(alert: alert)
     }
@@ -224,4 +224,5 @@ fileprivate extension UIControl {
         addAction(UIAction { (action: UIAction) in closure() }, for: controlEvents)
     }
 }
+
 

@@ -14,7 +14,7 @@ struct ITPWLibExamplesApp: App {
         WindowGroup {
             ContentView()
                 .onAppear {
-                    TechAlert().checkOnStartAlerts(appID: "123")
+//                    TechAlert().checkOnStartAlerts(appID: "123")
                 }
         }
     }

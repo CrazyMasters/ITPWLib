@@ -71,7 +71,9 @@ etyythmetyhkteklhjerjhkjrnhr
                         TechAlert().createTestTech(code: 4)
                     }
             }
-            
+            AsyncImage(url: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", contentMode: .fill)
+                .frame(width: 80, height: 20)
+                .cornerRadius(10)
             Spacer()
         }
         .background(Color.red.ignoresSafeArea())
