@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import ITPWLib
 
 @main
 struct ITPWLibExamplesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    TechAlert().checkOnStartAlerts(appID: "123")
+                }
         }
     }
 }

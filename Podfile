@@ -19,6 +19,6 @@ target 'ITPWLibExamples' do
 
   # Pods for ITPWLibExamples
 
- pod 'Alamofire'
+ pod 'Alamofire', '~> 5.5'
 
 end

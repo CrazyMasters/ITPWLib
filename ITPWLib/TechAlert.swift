@@ -55,25 +55,8 @@ public final class TechAlert{
             
         }
     }
-    
-    public func createTestTech(code: Int) {
-        
+    private func createOnStartAlert(alert: AlertModel){
         DispatchQueue.main.async {
-            let alert: AlertModel
-            switch code {
-            case 0:
-                alert = AlertModel.testValue0
-            case 1:
-                alert = AlertModel.testValue1
-            case 2:
-                alert = AlertModel.testValue2
-            case 3:
-                alert = AlertModel.testValue3
-            case 4:
-                alert = AlertModel.testValue4
-            default:
-                alert = AlertModel.testValue4
-            }
             //получаем окно
             let presentWindow: UIView?
             presentWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
@@ -117,6 +100,32 @@ public final class TechAlert{
             hostController.view.backgroundColor = .clear
             
         }
+    }
+    
+    public func checkOnStartAlerts(appID: String){
+        Task{
+            let alert = try await NetworkManager().get_alerts(appID: appID)
+            createOnStartAlert(alert: alert)
+        }
+    }
+    
+    public func createTestTech(code: Int) {
+        let alert: AlertModel
+        switch code {
+        case 0:
+            alert = AlertModel.testValue0
+        case 1:
+            alert = AlertModel.testValue1
+        case 2:
+            alert = AlertModel.testValue2
+        case 3:
+            alert = AlertModel.testValue3
+        case 4:
+            alert = AlertModel.testValue4
+        default:
+            alert = AlertModel.testValue4
+        }
+        createOnStartAlert(alert: alert)
     }
     
     /// создает окно поверх приложения с html кодом ошибки
