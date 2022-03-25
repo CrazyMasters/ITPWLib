@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-internal struct OnStartAlertView: View {
+public struct OnStartAlertView: View {
     @StateObject var vm = OnStartViewModel()
     var alert: AlertModel
     var close: () -> ()

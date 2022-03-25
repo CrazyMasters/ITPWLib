@@ -13,7 +13,7 @@ public struct AlertModel: Codable {
     static let testValue2 = AlertModel(type: 2, title: "title", text: "please upadte awfaf wgere aqewfg wef ", img: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", buttons: [AlertButton.testValue, AlertButton.testValue2])
     static let testValue3 = AlertModel(type: 3, title: "title", text: "please upadte awfaf wgere aqewfg wef ", img: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", buttons: [AlertButton.testValue, AlertButton.testValue2])
     static let testValue4 = AlertModel(type: 4, title: "title", text: "please upadte awfaf wgere aqewfg wef ", img: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", buttons: [AlertButton.testValue, AlertButton.testValue2])
-    private let type: Int
+    public let type: Int
     public let title, text: String?
     public let img: String?
     public let buttons: [AlertButton]

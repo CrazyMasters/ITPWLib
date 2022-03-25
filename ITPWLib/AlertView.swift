@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-internal struct AlertView: View {
+public struct AlertView: View {
     @State var text: String
     var close: ()->()
     private func removeView(){
@@ -20,7 +20,7 @@ internal struct AlertView: View {
     }
     @State private var offset = -1000.0
     
-    var body: some View {
+    public var body: some View {
         VStack{
             Text(text)
                 .padding()

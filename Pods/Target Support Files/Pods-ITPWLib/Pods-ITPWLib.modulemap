@@ -1,4 +1,4 @@
-framework module Pods_ITPWLib {
+module Pods_ITPWLib {
   umbrella header "Pods-ITPWLib-umbrella.h"
 
   export *

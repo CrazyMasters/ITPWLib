@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DF04A078C8591D2978F7531798997BCD"
-               BuildableName = "Pods_ITPWLib.framework"
+               BuildableName = "libPods-ITPWLib.a"
                BlueprintName = "Pods-ITPWLib"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

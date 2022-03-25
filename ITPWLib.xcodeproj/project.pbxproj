@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113C4A4B14C16FFD920E1422 /* libPods-ITPWLib-ITPWLibTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E75F81EB973A80C5E6B63736 /* libPods-ITPWLib-ITPWLibTests.a */; };
 		1236DC80E1343378A0BA80C3 /* Pods_ITPWLibExamples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EBE4E0417B12E41F0A7898C /* Pods_ITPWLibExamples.framework */; };
-		5FF7349B30FF363568A7CC45 /* Pods_ITPWLib_ITPWLibTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AB4BD4043FEDA8C19C5A3C /* Pods_ITPWLib_ITPWLibTests.framework */; };
+		45B37335D06AF246FFCBD91B /* libPods-ITPWLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAC0E7457A38A9E5764255C /* libPods-ITPWLib.a */; };
 		6162056527E85F8A00D09D3B /* ITPWLib.docc in Sources */ = {isa = PBXBuildFile; fileRef = 6162056427E85F8A00D09D3B /* ITPWLib.docc */; };
 		6162056B27E85F8A00D09D3B /* ITPWLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6162056027E85F8A00D09D3B /* ITPWLib.framework */; };
 		6162057027E85F8A00D09D3B /* ITPWLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162056F27E85F8A00D09D3B /* ITPWLibTests.swift */; };
@@ -24,7 +25,6 @@
 		619292C027EB49E700E0526A /* OnStartAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619292BF27EB49E700E0526A /* OnStartAlertViewModel.swift */; };
 		619292C327EB54B200E0526A /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619292C227EB54B200E0526A /* AsyncImage.swift */; };
 		619292C527EB559D00E0526A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619292C427EB559D00E0526A /* NetworkManager.swift */; };
-		B19F87708C9D45CE18E57FF3 /* Pods_ITPWLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 645CB80AF87B0108C3DC0470 /* Pods_ITPWLib.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,10 +62,10 @@
 		619292C427EB559D00E0526A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		619292C627EB5C3000E0526A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		619292C727EB5C8300E0526A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		645CB80AF87B0108C3DC0470 /* Pods_ITPWLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITPWLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF38E17B7104B5C64E4293B /* Pods-ITPWLib-ITPWLibTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITPWLib-ITPWLibTests.release.xcconfig"; path = "Target Support Files/Pods-ITPWLib-ITPWLibTests/Pods-ITPWLib-ITPWLibTests.release.xcconfig"; sourceTree = "<group>"; };
-		B7AB4BD4043FEDA8C19C5A3C /* Pods_ITPWLib_ITPWLibTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITPWLib_ITPWLibTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AAC0E7457A38A9E5764255C /* libPods-ITPWLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ITPWLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C865A36B011689821B625951 /* Pods-ITPWLib-ITPWLibTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITPWLib-ITPWLibTests.debug.xcconfig"; path = "Target Support Files/Pods-ITPWLib-ITPWLibTests/Pods-ITPWLib-ITPWLibTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E75F81EB973A80C5E6B63736 /* libPods-ITPWLib-ITPWLibTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ITPWLib-ITPWLibTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B19F87708C9D45CE18E57FF3 /* Pods_ITPWLib.framework in Frameworks */,
+				45B37335D06AF246FFCBD91B /* libPods-ITPWLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6162056B27E85F8A00D09D3B /* ITPWLib.framework in Frameworks */,
-				5FF7349B30FF363568A7CC45 /* Pods_ITPWLib_ITPWLibTests.framework in Frameworks */,
+				113C4A4B14C16FFD920E1422 /* libPods-ITPWLib-ITPWLibTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,9 +175,9 @@
 		6CA30E5AD20B88E25154CA52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				645CB80AF87B0108C3DC0470 /* Pods_ITPWLib.framework */,
-				B7AB4BD4043FEDA8C19C5A3C /* Pods_ITPWLib_ITPWLibTests.framework */,
 				1EBE4E0417B12E41F0A7898C /* Pods_ITPWLibExamples.framework */,
+				9AAC0E7457A38A9E5764255C /* libPods-ITPWLib.a */,
+				E75F81EB973A80C5E6B63736 /* libPods-ITPWLib-ITPWLibTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -236,7 +236,6 @@
 				6162056627E85F8A00D09D3B /* Sources */,
 				6162056727E85F8A00D09D3B /* Frameworks */,
 				6162056827E85F8A00D09D3B /* Resources */,
-				1802B1446AF0C02907157D1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,23 +334,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1802B1446AF0C02907157D1D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ITPWLib-ITPWLibTests/Pods-ITPWLib-ITPWLibTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ITPWLib-ITPWLibTests/Pods-ITPWLib-ITPWLibTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ITPWLib-ITPWLibTests/Pods-ITPWLib-ITPWLibTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2C2D1FEB9E6213636FF593F1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

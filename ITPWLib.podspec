@@ -117,10 +117,10 @@ spec.swift_version = '5.0'
   #  the lib prefix of their name.
   #
 
-  # spec.framework  = "SomeFramework"
+   spec.framework  = "Alamofire"
   # spec.frameworks = "SomeFramework", "AnotherFramework"
 
-  # spec.library   = "iconv"
+  # spec.library   = "Alamofire"
   # spec.libraries = "iconv", "xml2"
 
 
@@ -133,6 +133,6 @@ spec.swift_version = '5.0'
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "JSONKit", "~> 1.4"
+   spec.dependency "Alamofire", "~> 5.5"
 
 end
