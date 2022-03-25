@@ -12,13 +12,13 @@ internal struct AlertView: View {
     var close: ()->()
     private func removeView(){
         withAnimation {
-            offset = -300
+            offset = -1000.0
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 close()
             }
         }
     }
-    @State private var offset = -300.0
+    @State private var offset = -1000.0
     
     var body: some View {
         VStack{
@@ -38,11 +38,10 @@ internal struct AlertView: View {
         .onAppear(perform: {
             withAnimation {
                 offset = 0
-                
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 withAnimation {
-                    offset = -300
+                    offset = -1000.0
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.close()

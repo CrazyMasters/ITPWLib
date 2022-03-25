@@ -1,0 +1,6 @@
+framework module Pods_ITPWLibExamples {
+  umbrella header "Pods-ITPWLibExamples-umbrella.h"
+
+  export *
+  module * { export * }
+}
