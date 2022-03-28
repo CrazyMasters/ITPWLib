@@ -18,26 +18,22 @@ internal class AsyncImageViewModel: ObservableObject{
             
         }
     }
+    init(url: String){
+        getImage(url: url)
+    }
 }
 ///async image that gets the image from url
 public struct AsyncImage: View {
-    @StateObject private var vm = AsyncImageViewModel()
-    @State var url: String
+    @StateObject private var vm: AsyncImageViewModel
     @State var contentMode: ContentMode
     public init(url: String, contentMode: ContentMode){
-        self.url = url
         self.contentMode = contentMode
+        self._vm = StateObject(wrappedValue: AsyncImageViewModel(url: url))
     }
     public var body: some View {
         Image(uiImage: vm.image ?? UIImage())
             .resizable()
             .aspectRatio(contentMode: contentMode)
-            .onAppear {
-                if vm.image == nil{
-                 vm.getImage(url: url)
-                }
-            }
-        
     }
 }
 

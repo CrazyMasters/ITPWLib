@@ -9,6 +9,7 @@ import SwiftUI
 import ITPWLib
 
 struct ContentView: View {
+    @State private var loading = false
     var body: some View {
         VStack {
             Text("TEST HTML Alert")
@@ -72,8 +73,28 @@ etyythmetyhkteklhjerjhkjrnhr
                     }
             }
             AsyncImage(url: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", contentMode: .fill)
-                .frame(width: 80, height: 20)
+                .frame(width: 80, height: 80)
                 .cornerRadius(10)
+                .loading(isActive: loading)
+            
+            Button {
+                withAnimation {
+                    loading.toggle()
+                }
+                
+            } label: {
+                HStack{
+                    Spacer()
+                    Text("Toggle loading")
+                        .foregroundColor(.white)
+                        .padding()
+                    Spacer()
+                }
+                .background(Color.gray)
+                .cornerRadius(15)
+                .padding()
+            }
+
             Spacer()
         }
         .background(Color.red.ignoresSafeArea())
