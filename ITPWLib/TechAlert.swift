@@ -20,12 +20,14 @@ public final class TechAlert{
         
         DispatchQueue.main.async {
             
-            guard let rootController = UIApplication.shared.windows.filter({$0.isKeyWindow}).first?.rootViewController else {return}
-            var currentController: UIViewController! = rootController
-            while( currentController.presentedViewController != nil ) {
-                currentController = currentController.presentedViewController
-            }
-            
+            //получаем окно
+            let presentWindow: UIView?
+            presentWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+            guard let window = presentWindow else { return }
+            //если алерт уже показан - умираем
+            if window.subviews.contains(where: { (view) -> Bool in
+                view.accessibilityIdentifier == text
+            }) {return}
             let hostController = UIHostingController(rootView: AlertView(text: text, close: {
                 for child in window.subviews{
                     if child.accessibilityIdentifier == text{
@@ -33,25 +35,18 @@ public final class TechAlert{
                     }
                 }
             }))
-            if currentController.view.subviews.contains(where: { (view) -> Bool in
-                view.accessibilityIdentifier == text
-            }) {return}
             hostController.view.accessibilityIdentifier = text
             hostController.view.translatesAutoresizingMaskIntoConstraints = false
-            currentController.addChild(hostController)
-            currentController.view.addSubview(hostController.view)
+            
+            window.addSubview(hostController.view)
+            
             NSLayoutConstraint.activate([
-                hostController.view.centerXAnchor.constraint(equalTo: currentController.view.centerXAnchor, constant: 0),
-                hostController.view.centerYAnchor.constraint(equalTo: currentController.view.centerYAnchor, constant: 0),
-                hostController.view.widthAnchor.constraint(equalTo: currentController.view.widthAnchor, constant: 0),
-                hostController.view.heightAnchor.constraint(equalTo: currentController.view.heightAnchor, constant: 0),
+                hostController.view.centerXAnchor.constraint(equalTo: window.centerXAnchor, constant: 0),
+                hostController.view.centerYAnchor.constraint(equalTo: window.centerYAnchor, constant: 0),
+                hostController.view.widthAnchor.constraint(equalTo: window.widthAnchor, constant: 0),
+                hostController.view.heightAnchor.constraint(equalTo: window.heightAnchor, constant: 0),
             ])
-            
-            hostController.view.backgroundColor = .clear
-//            window.addSubview(hostController.view)
-            
-//            window.addSubview(container)
-
+            hostController.view.backgroundColor = UIColor.clear
             
         }
     }
