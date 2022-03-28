@@ -27,9 +27,9 @@ public final class TechAlert{
             }
             
             let hostController = UIHostingController(rootView: AlertView(text: text, close: {
-                for child in currentController.children{
-                    withAnimation {
-                        child.view.removeFromSuperview()
+                for child in window.subviews{
+                    if child.accessibilityIdentifier == text{
+                        child.removeFromSuperview()
                     }
                 }
             }))
