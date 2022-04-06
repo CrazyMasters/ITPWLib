@@ -41,10 +41,9 @@ public final class TechAlert{
             window.addSubview(hostController.view)
             
             NSLayoutConstraint.activate([
+                hostController.view.topAnchor.constraint(equalTo: window.topAnchor, constant: 0),
                 hostController.view.centerXAnchor.constraint(equalTo: window.centerXAnchor, constant: 0),
-                hostController.view.centerYAnchor.constraint(equalTo: window.centerYAnchor, constant: 0),
-                hostController.view.widthAnchor.constraint(equalTo: window.widthAnchor, constant: 0),
-                hostController.view.heightAnchor.constraint(equalTo: window.heightAnchor, constant: 0),
+                hostController.view.widthAnchor.constraint(lessThanOrEqualTo: window.widthAnchor, constant: 0),
             ])
             hostController.view.backgroundColor = UIColor.clear
             

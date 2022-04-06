@@ -13,7 +13,7 @@ public struct AlertView: View {
     private func removeView(){
         withAnimation {
             offset = -1000.0
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 close()
             }
         }
@@ -31,7 +31,7 @@ public struct AlertView: View {
                 .offset(x: 0, y: offset)
                 .animation(.easeInOut)
                 .onTapGesture {
-                   removeView()
+//                   removeView()
                 }
             Spacer()
         }
@@ -43,7 +43,7 @@ public struct AlertView: View {
                 withAnimation {
                     offset = -1000.0
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                     self.close()
                 }
             }

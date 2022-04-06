@@ -31,6 +31,21 @@ struct ContentView: View {
 
     """)
             }
+            Button {
+                print("test tap")
+                
+            } label: {
+                HStack{
+                    Spacer()
+                    Text("rarwar awf awfRGESFAEF  raa")
+                        .foregroundColor(.white)
+                        .padding()
+                    Spacer()
+                }
+                .background(Color.gray)
+                .cornerRadius(15)
+                .padding()
+            }
             HStack(){
                 Spacer()
             }
@@ -49,6 +64,7 @@ e ynet
  netoy
 etyythmetyhkteklhjerjhkjrnhr
 """)
+//                    TechAlert().createAlert(text: "heh")
                 }
             HStack{
                 Text("type 1")
@@ -94,7 +110,7 @@ etyythmetyhkteklhjerjhkjrnhr
                 .cornerRadius(15)
                 .padding()
             }
-
+            
             Spacer()
         }
         .background(Color.red.ignoresSafeArea())
