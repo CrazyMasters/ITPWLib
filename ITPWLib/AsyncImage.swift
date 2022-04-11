@@ -13,13 +13,15 @@ internal class AsyncImageViewModel: ObservableObject{
         Task{
             let uiImage = try await NetworkManager().getImage(url: url)
             DispatchQueue.main.async {
-                self.image = uiImage
+                withAnimation {
+                    self.image = uiImage
+                }
             }
             
         }
     }
     init(url: String){
-        getImage(url: url)
+        self.getImage(url: url)
     }
 }
 ///async image that gets the image from url
@@ -31,27 +33,44 @@ public struct AsyncImage: View {
         self._vm = StateObject(wrappedValue: AsyncImageViewModel(url: url))
     }
     public var body: some View {
-        Image(uiImage: vm.image ?? UIImage())
-            .resizable()
-            .aspectRatio(contentMode: contentMode)
+        
+        if vm.image == nil{
+            AnimatedGradient()
+        }else{
+            Image(uiImage: vm.image ?? UIImage())
+                .resizable()
+                .aspectRatio(contentMode: contentMode)
+        }
+        
+        
+        
+        
     }
 }
 
 struct AsyncImage_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncImage(url: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", contentMode: .fit)
+//        AsyncImage(url: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", contentMode: .fit)
+        AnimatedGradient()
+            .preferredColorScheme(.dark)
     }
 }
-//
-//
-//extension Image{
-//    init(url: String){
-//        var image = UIImage()
-//        self.init(uiImage: image)
-//        Task{
-//            let uiImage = try await NetworkManager().getImage(url: url)
-//
-//
-//        }
-//    }
-//}
+
+private struct AnimatedGradient: View{
+    @State private var animateGradient = false
+    @Environment(\.colorScheme) private var colorScheme
+    let light = [Color.white, Color(.sRGB, red: 0.5, green: 1, blue: 1, opacity: 1)]
+    let dark = [Color.black, Color(.sRGB, red: 0.28, green: 0.3, blue: 0.3, opacity: 1)]
+    var body: some View{
+        LinearGradient(colors: colorScheme == .dark ? dark : light, startPoint: .topLeading, endPoint: .bottomTrailing)
+            .hueRotation(.degrees(animateGradient ? 180 : 0))
+            .ignoresSafeArea()
+//            .blur(radius: 1)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true)) {
+                    animateGradient.toggle()
+                }
+            }
+            
+    }
+}
