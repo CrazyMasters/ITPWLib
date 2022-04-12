@@ -10,6 +10,7 @@
 		113C4A4B14C16FFD920E1422 /* libPods-ITPWLib-ITPWLibTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E75F81EB973A80C5E6B63736 /* libPods-ITPWLib-ITPWLibTests.a */; };
 		1236DC80E1343378A0BA80C3 /* Pods_ITPWLibExamples.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EBE4E0417B12E41F0A7898C /* Pods_ITPWLibExamples.framework */; };
 		45B37335D06AF246FFCBD91B /* libPods-ITPWLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAC0E7457A38A9E5764255C /* libPods-ITPWLib.a */; };
+		614FD1782805B39E002EEEB1 /* RefreshScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614FD1772805B39E002EEEB1 /* RefreshScrollView.swift */; };
 		6162056527E85F8A00D09D3B /* ITPWLib.docc in Sources */ = {isa = PBXBuildFile; fileRef = 6162056427E85F8A00D09D3B /* ITPWLib.docc */; };
 		6162056B27E85F8A00D09D3B /* ITPWLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6162056027E85F8A00D09D3B /* ITPWLib.framework */; };
 		6162057027E85F8A00D09D3B /* ITPWLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162056F27E85F8A00D09D3B /* ITPWLibTests.swift */; };
@@ -44,6 +45,7 @@
 		29507003EB4F4F3997D1E5C5 /* Pods-ITPWLib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITPWLib.release.xcconfig"; path = "Target Support Files/Pods-ITPWLib/Pods-ITPWLib.release.xcconfig"; sourceTree = "<group>"; };
 		34CB057D9669F007486D9C5F /* Pods-ITPWLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITPWLib.debug.xcconfig"; path = "Target Support Files/Pods-ITPWLib/Pods-ITPWLib.debug.xcconfig"; sourceTree = "<group>"; };
 		4A9BE8DF3A5034CC0BDBD6DF /* Pods-ITPWLibExamples.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITPWLibExamples.debug.xcconfig"; path = "Target Support Files/Pods-ITPWLibExamples/Pods-ITPWLibExamples.debug.xcconfig"; sourceTree = "<group>"; };
+		614FD1772805B39E002EEEB1 /* RefreshScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshScrollView.swift; sourceTree = "<group>"; };
 		6162056027E85F8A00D09D3B /* ITPWLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ITPWLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6162056327E85F8A00D09D3B /* ITPWLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITPWLib.h; sourceTree = "<group>"; };
 		6162056427E85F8A00D09D3B /* ITPWLib.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ITPWLib.docc; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				619292C227EB54B200E0526A /* AsyncImage.swift */,
 				6188089527F19E65004F3E54 /* View Extensions.swift */,
 				619292C427EB559D00E0526A /* NetworkManager.swift */,
+				614FD1772805B39E002EEEB1 /* RefreshScrollView.swift */,
 				619292B927EB05C400E0526A /* AlertView.swift */,
 				61B384DE27EDB81900F592D6 /* OnStartAlertModel.swift */,
 				619292BD27EB49D700E0526A /* OnStartAlertView.swift */,
@@ -428,6 +431,7 @@
 				619292C027EB49E700E0526A /* OnStartAlertViewModel.swift in Sources */,
 				61B384DF27EDB81900F592D6 /* OnStartAlertModel.swift in Sources */,
 				619292BA27EB05C400E0526A /* AlertView.swift in Sources */,
+				614FD1782805B39E002EEEB1 /* RefreshScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
