@@ -33,18 +33,12 @@ public struct AsyncImage: View {
         self._vm = StateObject(wrappedValue: AsyncImageViewModel(url: url))
     }
     public var body: some View {
-        
-        if vm.image == nil{
+        ZStack{
             AnimatedGradient()
-        }else{
             Image(uiImage: vm.image ?? UIImage())
                 .resizable()
                 .aspectRatio(contentMode: contentMode)
         }
-        
-        
-        
-        
     }
 }
 
