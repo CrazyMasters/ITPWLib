@@ -24,7 +24,7 @@ internal class AsyncImageViewModel: ObservableObject{
         self.getImage(url: url)
     }
 }
-///async image that gets the image from url
+///async image that gets the image from url, saving in cache and doing it in async, supports ios 14
 public struct AsyncImage: View {
     @StateObject private var vm: AsyncImageViewModel
     @State var contentMode: ContentMode
@@ -56,21 +56,3 @@ struct AsyncImage_Previews: PreviewProvider {
     }
 }
 
-private struct AnimatedGradient: View{
-    @State private var animateGradient = false
-    @Environment(\.colorScheme) private var colorScheme
-    let light = [Color.white, Color(.sRGB, red: 0.5, green: 1, blue: 1, opacity: 1)]
-    let dark = [Color.black, Color(.sRGB, red: 0.28, green: 0.3, blue: 0.3, opacity: 1)]
-    var body: some View{
-        LinearGradient(colors: colorScheme == .dark ? dark : light, startPoint: .topLeading, endPoint: .bottomTrailing)
-            .hueRotation(.degrees(animateGradient ? 180 : 0))
-            .ignoresSafeArea()
-//            .blur(radius: 1)
-            .onAppear {
-                withAnimation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true)) {
-                    animateGradient.toggle()
-                }
-            }
-            
-    }
-}

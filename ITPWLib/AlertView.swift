@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-public struct AlertView: View {
+///показывает сверху на пару секунд текст, масштабируется
+internal struct AlertView: View {
     @State var text: String
     var close: ()->()
     private func removeView(){

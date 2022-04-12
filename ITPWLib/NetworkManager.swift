@@ -10,7 +10,7 @@ import SwiftUI
 import Alamofire
 
 
-public class NetworkManager{
+internal class NetworkManager{
     static var AlertHost = "https://fb14c25e-e7df-4fca-baef-90843943fca9.mock.pstmn.io/"
     enum APIError: Error {
         case detail(text: String)

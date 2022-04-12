@@ -56,9 +56,8 @@ fileprivate struct Indicator: View {
         }
     }
 }
-/*
- Custom refreshable scroll view that works in ios 14
- */
+
+ ///Custom refreshable scroll view that works in ios 14
 struct RefreshScrollView<T: View>: View {
     @State var offset = 0.0
     @Binding var lock: Bool

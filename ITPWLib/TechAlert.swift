@@ -9,7 +9,7 @@ import WebKit
 import PDFKit
 import SwiftUI
 
-
+///Технические алерты для использования в приложении
 public final class TechAlert{
     public init(){
         
@@ -49,6 +49,7 @@ public final class TechAlert{
             
         }
     }
+    ///создает один из информационных алертов о системе
     private func createOnStartAlert(alert: AlertAPIModel){
         DispatchQueue.main.async {
             //получаем окно
@@ -95,7 +96,7 @@ public final class TechAlert{
             
         }
     }
-    
+    ///проверить с сервера, нужно ли показать какой-либо алерт, например об outdated app version или тех работы
     public func checkOnStartAlerts(appID: String){
         Task{
             let alert = try await NetworkManager().get_alerts(appID: appID)
