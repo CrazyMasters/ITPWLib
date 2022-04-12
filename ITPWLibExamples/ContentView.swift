@@ -10,6 +10,9 @@ import ITPWLib
 
 struct ContentView: View {
     @State private var loading = false
+    init(){
+        URLCache.shared.removeAllCachedResponses()
+    }
     var body: some View {
         VStack {
             Text("TEST HTML Alert")
@@ -88,9 +91,12 @@ etyythmetyhkteklhjerjhkjrnhr
                         TechAlert().createTestTech(code: 4)
                     }
             }
-            AsyncImage(url: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", contentMode: .fill)
-                .frame(width: 80, height: 80)
+            AsyncImage(url: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", contentMode: .fit)
+                
+                .frame(width: 150, height: 80)
+                .background(Color.blue)
                 .cornerRadius(10)
+                
                 .loading(isActive: loading)
             
             Button {
