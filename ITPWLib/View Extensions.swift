@@ -39,7 +39,7 @@ fileprivate struct TextFieldAlert: ViewModifier {
     @State var text: String = ""
     let confirm: (String) -> ()
     let title: String
-
+    @Environment(\.colorScheme) var colorScheme
     func body(content: Content) -> some View {
         GeometryReader { (deviceSize: GeometryProxy) in
             ZStack {
@@ -67,6 +67,7 @@ fileprivate struct TextFieldAlert: ViewModifier {
                             }
                         }) {
                             Text(NSLocalizedString("confirm", comment: ""))
+                            
                         }
                         .disabled(text.isEmpty)
                     }
@@ -83,7 +84,7 @@ fileprivate struct TextFieldAlert: ViewModifier {
                     }
                 }
                 .padding()
-                .background(Color.white)
+                .background(colorScheme == .dark ? Color.black : Color.white)
                 .cornerRadius(15)
                 
                 .frame(
@@ -91,7 +92,7 @@ fileprivate struct TextFieldAlert: ViewModifier {
                     height: deviceSize.size.height*0.7
                 )
                 
-                .shadow(radius: 1)
+                .shadow(radius: 5)
                 .opacity(self.isShowing ? 1 : 0)
             }
         }

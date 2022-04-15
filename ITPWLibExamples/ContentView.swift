@@ -10,6 +10,7 @@ import ITPWLib
 
 struct ContentView: View {
     @State private var loading = false
+    @State private var alert = false
     init(){
         URLCache.shared.removeAllCachedResponses()
     }
@@ -69,6 +70,11 @@ etyythmetyhkteklhjerjhkjrnhr
 """)
 //                    TechAlert().createAlert(text: "heh")
                 }
+            Text("textfield")
+                .padding()
+                .onTapGesture {
+                    alert.toggle()
+                }
             HStack{
                 Text("type 1")
                     .padding()
@@ -120,6 +126,9 @@ etyythmetyhkteklhjerjhkjrnhr
             Spacer()
         }
         .background(Color.red.ignoresSafeArea())
+        .textFieldAlert(isShowing: $alert, title: "title") { output in
+            print(output)
+        }
     }
 }
 
