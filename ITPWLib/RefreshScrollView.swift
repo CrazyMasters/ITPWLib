@@ -88,7 +88,7 @@ public struct RefreshScrollView<T: View>: View {
     let content: T
     let onRefresh: () -> ()
     
-    init(showing: Binding<Bool>, onRefresh: @escaping () -> (), @ViewBuilder content: () -> T) {
+    public init(showing: Binding<Bool>, onRefresh: @escaping () -> (), @ViewBuilder content: () -> T) {
         self.content = content()
         self._lock = showing
         self.onRefresh = onRefresh
