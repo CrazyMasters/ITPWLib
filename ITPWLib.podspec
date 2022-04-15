@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "ITPWLib"
-  spec.version      = "0.2.3"
+  spec.version      = "0.2.4"
   spec.summary      = "ITPW lib"
 
   # This description is used to generate tags and improve search results.
