@@ -15,7 +15,7 @@ struct ContentView: View {
         URLCache.shared.removeAllCachedResponses()
     }
     var body: some View {
-        VStack {
+        RefreshScrollView {
             Text("TEST HTML Alert")
                 .padding()
                 .onTapGesture {

@@ -58,7 +58,29 @@ fileprivate struct Indicator: View {
 }
 
  ///Custom refreshable scroll view that works in ios 14
-struct RefreshScrollView<T: View>: View {
+///struct ContentView: View {
+///    @State private var verticalOffset: CGFloat = 0.0
+///    @State private var loading = false
+///    var body: some View {
+///        VStack{
+///            RefreshScrollView(showing: $loading, todo: {
+///                Task{
+///                    DispatchQueue.main.asyncAfter(deadline:.now()+1){
+///                        withAnimation {
+///                            loading = false
+///                        }
+///
+///                    }
+///                }
+///            }){
+///                ForEach(0..<100){cu in
+///                    Text("\(cu)")
+///                }
+///            }
+///        }
+///    }
+///}
+public struct RefreshScrollView<T: View>: View {
     @State var offset = 0.0
     @Binding var lock: Bool
     
@@ -72,7 +94,7 @@ struct RefreshScrollView<T: View>: View {
         self.onRefresh = onRefresh
     }
     
-    var body: some View {
+    public var body: some View {
         ZStack{
             VStack{
                 HStack{
