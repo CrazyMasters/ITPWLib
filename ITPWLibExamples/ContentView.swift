@@ -11,11 +11,14 @@ import ITPWLib
 struct ContentView: View {
     @State private var loading = false
     @State private var alert = false
+    @State private var showingLoading = false
     init(){
         URLCache.shared.removeAllCachedResponses()
     }
     var body: some View {
-        RefreshScrollView {
+        RefreshScrollView(showing: $showingLoading, onRefresh: {
+            print("reload")
+        }) {
             Text("TEST HTML Alert")
                 .padding()
                 .onTapGesture {

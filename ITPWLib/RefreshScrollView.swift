@@ -115,8 +115,8 @@ public struct RefreshScrollView<T: View>: View {
             GeometryReader { outsideProxy in
                 
                 ScrollView {
-                    Spacer()
-                        .frame(height: lock ? maxOffset : 1)
+//                    Spacer()
+//                        .frame(height: lock ? maxOffset : 1)
                     ZStack {
                         GeometryReader { insideProxy in
                             Color.clear
@@ -124,6 +124,8 @@ public struct RefreshScrollView<T: View>: View {
                                 .padding(.top, lock ? maxOffset : 0)
                         }
                         VStack {
+                            Color.clear
+                                .frame(height: lock ? maxOffset : offset)
                             self.content
                         }
                     }
@@ -132,8 +134,8 @@ public struct RefreshScrollView<T: View>: View {
             }
             .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
                 withAnimation {
-                    if value[0] < 0{
-                        self.offset = abs(value[0])
+                    if value[0] < 0, !lock{
+                        self.offset = abs(value[0])/2
                         if self.offset > maxOffset{
                             self.lock = true
                             onRefresh()
@@ -158,5 +160,3 @@ fileprivate struct ScrollOffsetPreferenceKey: PreferenceKey {
         value.append(contentsOf: nextValue())
     }
 }
-
-
