@@ -36,7 +36,7 @@ public struct AsyncImage: View {
         Image(uiImage: vm.image ?? UIImage())
             .resizable()
             .aspectRatio(contentMode: contentMode)
-            .opacity(vm.image == nil ? 0 : 1)
+            .opacity(vm.image == nil ? 0.01 : 1)
     }
 }
 

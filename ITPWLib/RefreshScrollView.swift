@@ -159,7 +159,6 @@ public struct RefreshScrollView<T: View>: View {
                         self.offset = 0
                     }
                 }
-                .removeAll(where: <#T##(Self.Element) -> Bool#>)
             }
             //Refresh indicator
             VStack{
