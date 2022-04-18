@@ -18,6 +18,11 @@ struct ContentView: View {
     var body: some View {
         RefreshScrollView(showing: $showingLoading, onRefresh: {
             print("reload")
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                withAnimation {
+                    self.showingLoading = false
+                }
+            }
         }) {
             Text("TEST HTML Alert")
                 .padding()
@@ -128,7 +133,7 @@ etyythmetyhkteklhjerjhkjrnhr
             
             Spacer()
         }
-        .background(Color.red.ignoresSafeArea())
+//        .background(Color.whi.ignoresSafeArea())
         .textFieldAlert(isShowing: $alert, title: "title") { output in
             print(output)
         }
