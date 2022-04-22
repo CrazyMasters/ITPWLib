@@ -112,7 +112,22 @@ etyythmetyhkteklhjerjhkjrnhr
                 .cornerRadius(10)
                 
                 .loading(isActive: loading)
+            HStack{
+                Text("Category")
+                    .font(.title2)
+                Spacer()
+                AsyncImage(url: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", contentMode: .fit)
+                    .cornerRadius(15)
+                    .frame(maxHeight: 80)
+                    .background(Color.red)
+    //                .frame(height: 80)
+                   
+            }
             
+            .padding(10)
+            .background(Color.gray)
+            .cornerRadius(10)
+            .padding(.horizontal)
             Button {
                 withAnimation {
                     loading.toggle()
