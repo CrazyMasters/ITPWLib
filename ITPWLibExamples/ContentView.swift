@@ -107,7 +107,7 @@ etyythmetyhkteklhjerjhkjrnhr
             }
             AsyncImage(url: "http://dev1.itpw.ru:8004/media/defaults/need_update.jpg", contentMode: .fit)
                 
-                .frame(width: 150, height: 80)
+                .frame(width: 80, height: 150)
                 .background(Color.blue)
                 .cornerRadius(10)
                 
