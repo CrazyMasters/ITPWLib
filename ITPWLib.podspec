@@ -5,7 +5,7 @@
 #  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
 #  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
-# pod lib lint; git add .;git commit -m "new vers"; git push; git tag 0.2.11; git push origin 0.2.11; pod trunk push;
+# pod lib lint; git add .;git commit -m "new vers"; git push; git tag 0.2.12; git push origin 0.2.12; pod trunk push;
 Pod::Spec.new do |spec|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "ITPWLib"
-  spec.version      = "0.2.11"
+  spec.version      = "0.2.12"
   spec.summary      = "ITPW lib"
 
   # This description is used to generate tags and improve search results.

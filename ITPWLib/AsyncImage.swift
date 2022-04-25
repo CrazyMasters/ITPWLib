@@ -33,13 +33,17 @@ public struct AsyncImage: View {
         self._vm = StateObject(wrappedValue: AsyncImageViewModel(url: url))
     }
     public var body: some View {
-//        ZStack{
-//            Color.clear
-                Image(uiImage: vm.image ?? UIImage())
+        ZStack{
+            if vm.image == nil{
+                Color.clear
+            }
+            if vm.image != nil{
+                Image(uiImage: vm.image!)
                     .resizable()
                     .aspectRatio(contentMode: contentMode)
-                    .opacity(vm.image != nil ? 1 : 0.0001)
-//        }
+//                    .opacity(vm.image != nil ? 1 : 0.0001)
+            }
+        }
 //            .opacity(vm.image == nil ? 0.01 : 1)
     }
 }
