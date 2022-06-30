@@ -11,6 +11,11 @@ internal class AsyncImageViewModel: ObservableObject{
     @Published var image: UIImage?
     func getImage(url: String){
         Task{
+            if let cached = NetworkManager.imageCache.object(forKey: url as AnyObject) as? UIImage{
+                        self.image = cached
+
+                return
+            }
             let uiImage = try await NetworkManager().getImage(url: url)
             DispatchQueue.main.async {
                 withAnimation {
@@ -33,18 +38,14 @@ public struct AsyncImage: View {
         self._vm = StateObject(wrappedValue: AsyncImageViewModel(url: url))
     }
     public var body: some View {
-        ZStack{
-            if vm.image == nil{
-                Color.clear
-            }
-            if vm.image != nil{
-                Image(uiImage: vm.image!)
-                    .resizable()
-                    .aspectRatio(contentMode: contentMode)
-//                    .opacity(vm.image != nil ? 1 : 0.0001)
-            }
-        }
-//            .opacity(vm.image == nil ? 0.01 : 1)
+            Color.clear
+                .overlay(Group{
+                    if vm.image != nil{
+                        Image(uiImage: vm.image!)
+                            .resizable()
+                            .aspectRatio(contentMode: contentMode)
+                    }
+                })
     }
 }
 

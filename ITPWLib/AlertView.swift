@@ -27,10 +27,11 @@ internal struct AlertView: View {
                 .padding()
                 .foregroundColor(.black)
                 .background(Color.white)
+                .multilineTextAlignment(.center)
                 .cornerRadius(10)
                 .shadow(color: .black, radius: 5, x: 0, y: 0)
                 .offset(x: 0, y: offset)
-                .animation(.easeInOut)
+                .animation(.spring())
                 .onTapGesture {
 //                   removeView()
                 }

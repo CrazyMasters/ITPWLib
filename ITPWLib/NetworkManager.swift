@@ -11,6 +11,7 @@ import Alamofire
 
 
 internal class NetworkManager{
+    static let imageCache = NSCache<AnyObject, AnyObject>()
     static var AlertHost = "https://fb14c25e-e7df-4fca-baef-90843943fca9.mock.pstmn.io/"
     enum APIError: Error {
         case detail(text: String)
@@ -95,19 +96,18 @@ internal class NetworkManager{
     }
     
     private func saveCachedImage(url: String, image: UIImage){
-        guard let Url = URL(string: url) else {return}
-        let request = URLRequest(url: Url)
-        let response = URLResponse(url: Url, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
-        let cachedData = CachedURLResponse(response: response, data: image.pngData()!)//.jpegData(compressionQuality: 0.7)!)
-        
-        URLCache.shared.storeCachedResponse(cachedData, for: request)
+        NetworkManager.imageCache.setObject(image, forKey: url as AnyObject)
+//        guard let Url = URL(string: url) else {return}
+//        let request = URLRequest(url: Url)
+//        let response = URLResponse(url: Url, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+//        let cachedData = CachedURLResponse(response: response, data: image.pngData()!)//.jpegData(compressionQuality: 0.7)!)
+//
+//        URLCache.shared.storeCachedResponse(cachedData, for: request)
     }
     
     ///получаем uiimage из даты по юрлу
     func getImage(url: String) async throws -> UIImage{
-        if let cached = getCachedImage(url: url){
-            return cached
-        }
+        
         let request = AF.request("\(url)", method: .get)
 
             let data = try await request.serializingData().value
@@ -120,6 +120,8 @@ internal class NetworkManager{
             }
           
     }
+
+    
     
     ///получаем uiimage из даты по юрлу
     func get_alerts(appID: String) async throws -> AlertAPIModel{
