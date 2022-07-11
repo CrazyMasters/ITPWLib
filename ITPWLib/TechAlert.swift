@@ -17,7 +17,7 @@ public final class TechAlert{
     
     ///Алерт сверху экрана, с текстом
     public func createAlert(text: String) {
-        #warning("duration")
+//        #warning("duration")
         DispatchQueue.main.async {
             
             //получаем окно
