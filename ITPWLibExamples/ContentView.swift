@@ -12,10 +12,14 @@ struct ContentView: View {
     @State private var loading = false
     @State private var alert = false
     @State private var showingLoading = false
+    @State private var value: CGFloat = 30
     init(){
         URLCache.shared.removeAllCachedResponses()
     }
     var body: some View {
+        CSlider(minValue: 0, maxValue: 100, value: $value, step: 10, background: .gray, foreground: .red, withAnimation: true, slider: VStack{
+            Rectangle().fill(Color.green).frame(width: 30, height: 10)
+        })
         RefreshScrollView(showing: $showingLoading, onRefresh: {
             print("reload")
             DispatchQueue.main.asyncAfter(deadline: .now()+1) {
@@ -58,6 +62,10 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .padding()
             }
+            
+//            CSlider(minValue: 0, maxValue: 100, value: $value, step: 1, sliderColor: .red, background: .gray, foreground: .red, slider: VStack{
+//                Capsule().fill(Color.green).frame(width: 30, height: 15)
+//            })
             HStack(){
                 Spacer()
             }

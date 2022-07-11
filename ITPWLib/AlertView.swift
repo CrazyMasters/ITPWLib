@@ -12,6 +12,7 @@ internal struct AlertView: View {
     @State var text: String
     var close: ()->()
     private func removeView(){
+        #warning("переделать исчезновение вью через бул")
         withAnimation {
             offset = -1000.0
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
@@ -42,12 +43,7 @@ internal struct AlertView: View {
                 offset = 0
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                withAnimation {
-                    offset = -1000.0
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    self.close()
-                }
+                removeView()
             }
         })
     }

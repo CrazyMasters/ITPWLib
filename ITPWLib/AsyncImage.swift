@@ -32,7 +32,7 @@ internal class AsyncImageViewModel: ObservableObject{
 ///async image that gets the image from url, saving in cache and doing it in async, supports ios 14
 public struct AsyncImage: View {
     @StateObject private var vm: AsyncImageViewModel
-    @State var contentMode: ContentMode
+    var contentMode: ContentMode
     public init(url: String, contentMode: ContentMode){
         self.contentMode = contentMode
         self._vm = StateObject(wrappedValue: AsyncImageViewModel(url: url))

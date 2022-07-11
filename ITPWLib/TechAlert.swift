@@ -17,7 +17,7 @@ public final class TechAlert{
     
     ///Алерт сверху экрана, с текстом
     public func createAlert(text: String) {
-        
+        #warning("duration")
         DispatchQueue.main.async {
             
             //получаем окно
@@ -81,7 +81,6 @@ public final class TechAlert{
             
             //даем идентификатор окну алерта
             hostController.view.accessibilityIdentifier = "pop"
-//            currentController.view.isUserInteractionEnabled = alert.alertType == .simple
             hostController.view.translatesAutoresizingMaskIntoConstraints = false
             
             window.addSubview(hostController.view)
@@ -180,8 +179,7 @@ public final class TechAlert{
                         switch result{
                         case .success(let data):
                             let objectsToShare = [data]
-                                    let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-//                                    activityVC.popoverPresentationController?.sourceView = button
+                            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
                             if let rootController = UIApplication.shared.windows.filter({$0.isKeyWindow}).first?.rootViewController {
                                     var currentController: UIViewController! = rootController
                                     while( currentController.presentedViewController != nil ) {
