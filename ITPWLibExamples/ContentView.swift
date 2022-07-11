@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var loading = false
     @State private var alert = false
     @State private var showingLoading = false
-    @State private var value: CGFloat = 30
+    @State private var value: Double = 30
     init(){
         URLCache.shared.removeAllCachedResponses()
     }

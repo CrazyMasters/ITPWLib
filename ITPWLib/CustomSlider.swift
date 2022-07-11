@@ -10,30 +10,30 @@ import SwiftUI
 public struct CSlider<Content: View>: View {
     
     ///передаваемое туда-сюда значение
-    @Binding private var value: CGFloat
+    @Binding private var value: Double
     
     ///ширина всего слайдера для вычисления
-    @State private var sliderWidth: CGFloat = 100
+    @State private var sliderWidth: Double = 100
     ///внутреннее значение слайдера
-    @State private var internalValue: CGFloat
+    @State private var internalValue: Double
     ///максимально возможное значение слайдера
-    private let maxValue: CGFloat
+    private let maxValue: Double
     ///с каким шагом меняется значение
-    private let step: CGFloat
+    private let step: Double
     ///минимально возможное значение слайдера
-    private let minValue: CGFloat
+    private let minValue: Double
     
     ///половина ширины всего слайдера
-    @State private var sliderHalfWidth: CGFloat = 14
+    @State private var sliderHalfWidth: Double = 14
     ///высота слайдера
-    @State private var sliderHeight: CGFloat = 1
+    @State private var sliderHeight: Double = 1
     ///цвет правой части линии
     private let background: Color
     ///цвет левой части линии
     private let foreground: Color
     
     ///координатный шаг слайдера
-    private var stepCoord: CGFloat {
+    private var stepCoord: Double {
         
         return sliderWidth/(maxValue-minValue)
     }
@@ -44,10 +44,10 @@ public struct CSlider<Content: View>: View {
     ///сам слайдер
     private let slider: Content
     
-    public init(minValue: CGFloat,
-                maxValue: CGFloat,
-                value: Binding<CGFloat>,
-                step: CGFloat = 0.1,
+    public init(minValue: Double,
+                maxValue: Double,
+                value: Binding<Double>,
+                step: Double = 0.1,
                 background: Color = .gray,
                 foreground: Color = .blue,
                 withAnimation: Bool = false,
