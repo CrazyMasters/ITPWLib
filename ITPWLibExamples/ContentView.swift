@@ -17,7 +17,7 @@ struct ContentView: View {
         URLCache.shared.removeAllCachedResponses()
     }
     var body: some View {
-        CSlider(minValue: 0, maxValue: 100, value: $value, step: 10, background: .gray, foreground: .red, withAnimation: true, slider: VStack{
+        CSlider(minValue: 30, maxValue: 100, value: $value, step: 10, background: .gray, foreground: .red, withAnimation: true, slider: VStack{
             Rectangle().fill(Color.green).frame(width: 30, height: 10)
         })
         RefreshScrollView(showing: $showingLoading, onRefresh: {

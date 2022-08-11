@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 ///Кастомный слайдер, которому можно приделать любой дизайн
 public struct CSlider<Content: View>: View {
     
@@ -94,6 +95,27 @@ public struct CSlider<Content: View>: View {
                         })
                 )
                 .clipShape(Capsule())
+                .overlay(
+                    ZStack{
+                        GeometryReader{ geo in
+                            Color.white.opacity(.ulpOfOne)
+                                .simultaneousGesture(
+                                    DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                                    .onChanged({ newValue in
+                                        let values = (maxValue-minValue)
+                                        let singlePercent = geo.size.width / 100
+                                        let tappedPercent = (newValue.location.x / singlePercent) / 100
+                                        let draggedOnValue = (values * tappedPercent) + minValue
+                                        let remainderFromDivider = draggedOnValue.truncatingRemainder(dividingBy: step)
+                                        let snappedValue = remainderFromDivider < step/2 ? (draggedOnValue - remainderFromDivider) : (draggedOnValue - remainderFromDivider) + step
+                                        value = snappedValue
+                                    })
+                                )
+                        }
+                        .frame(height: sliderHeight)
+                        
+                    }
+                )
             Color.red
                 .frame(width: 1, height: sliderHeight)
                 .foregroundColor(.black)
