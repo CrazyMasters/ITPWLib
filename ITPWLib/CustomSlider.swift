@@ -108,7 +108,9 @@ public struct CSlider<Content: View>: View {
                                         let draggedOnValue = (values * tappedPercent) + minValue
                                         let remainderFromDivider = draggedOnValue.truncatingRemainder(dividingBy: step)
                                         let snappedValue = remainderFromDivider < step/2 ? (draggedOnValue - remainderFromDivider) : (draggedOnValue - remainderFromDivider) + step
-                                        value = snappedValue
+                                        withAnimation {
+                                            value = snappedValue
+                                        }
                                     })
                                 )
                         }

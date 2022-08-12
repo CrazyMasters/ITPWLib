@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 # pod lib lint; git add .;git commit -m "new vers"; git push; git tag 0.2.17; git push origin 0.2.17; pod trunk push;
   spec.name         = "ITPWLib"
-  spec.version      = "0.2.18"
+  spec.version      = "0.2.19"
   spec.summary      = "ITPW lib"
 
   # This description is used to generate tags and improve search results.
