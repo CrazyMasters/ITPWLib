@@ -141,7 +141,9 @@
 				619292C427EB559D00E0526A /* NetworkManager.swift */,
 				614FD1772805B39E002EEEB1 /* RefreshScrollView.swift */,
 				619292B927EB05C400E0526A /* TopAlertView.swift */,
-				61DB402528ABCE5D003CA19D /* Technical Alerts */,
+				61DB401F28ABC2CB003CA19D /* TechnicalAlertView.swift */,
+				61DB402328ABCE13003CA19D /* TechnicalAlertManager.swift */,
+				61DB402128ABC30C003CA19D /* TechnicalAlertModel.swift */,
 			);
 			path = ITPWLib;
 			sourceTree = "<group>";
@@ -172,16 +174,6 @@
 				6162058727E85FC700D09D3B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		61DB402528ABCE5D003CA19D /* Technical Alerts */ = {
-			isa = PBXGroup;
-			children = (
-				61DB401F28ABC2CB003CA19D /* TechnicalAlertView.swift */,
-				61DB402328ABCE13003CA19D /* TechnicalAlertManager.swift */,
-				61DB402128ABC30C003CA19D /* TechnicalAlertModel.swift */,
-			);
-			path = "Technical Alerts";
 			sourceTree = "<group>";
 		};
 		6CA30E5AD20B88E25154CA52 /* Frameworks */ = {

@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 import SwiftUI
+
 public final class TechnicalAlertManager{
     public init(){}
     public static let shared = TechnicalAlertManager()
-    private var cache: [TechnicalAlert] = []
+    public var cache: [TechnicalAlert] = []
     
     public func tryCreateAlert(_ alert: TechnicalAlert){
         if self.cache.contains(where: {$0.id == alert.id}) && !alert.required{
