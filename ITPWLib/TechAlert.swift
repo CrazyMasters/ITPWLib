@@ -28,7 +28,7 @@ public final class TechAlert{
             if window.subviews.contains(where: { (view) -> Bool in
                 view.accessibilityIdentifier == text
             }) {return}
-            let hostController = UIHostingController(rootView: AlertView(text: text, close: {
+            let hostController = UIHostingController(rootView: TopAlertView(text: text, close: {
                 for child in window.subviews{
                     if child.accessibilityIdentifier == text{
                         child.removeFromSuperview()
@@ -50,77 +50,77 @@ public final class TechAlert{
         }
     }
     ///создает один из информационных алертов о системе
-    private func createOnStartAlert(alert: AlertAPIModel){
-        DispatchQueue.main.async {
-            //получаем окно
-            let presentWindow: UIView?
-            presentWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-            guard let window = presentWindow else { return }
-            //если нулевой алерт, то убираем уже существующий по идентификатору
-            if alert.alertType == .none{
-                for child in window.subviews{
-                    if child.accessibilityIdentifier == "pop"{
-                        child.removeFromSuperview()
-                    }
-                }
-                return
-            }
-            //если алерт уже показан - умираем
-            if window.subviews.contains(where: { (view) -> Bool in
-                view.accessibilityIdentifier == "pop"
-            }) {return}
-            
-            //создаем контроллер, передаем тип алерта и функцию для закрытия
-            let hostController = UIHostingController(rootView: OnStartAlertView(alert: alert, close: {
-                for child in window.subviews{
-                    if child.accessibilityIdentifier == "pop"{
-                        child.removeFromSuperview()
-                    }
-                }
-            }))
-            
-            //даем идентификатор окну алерта
-            hostController.view.accessibilityIdentifier = "pop"
-            hostController.view.translatesAutoresizingMaskIntoConstraints = false
-            
-            window.addSubview(hostController.view)
-            
-            NSLayoutConstraint.activate([
-                hostController.view.centerXAnchor.constraint(equalTo: window.centerXAnchor, constant: 0),
-                hostController.view.centerYAnchor.constraint(equalTo: window.centerYAnchor, constant: 0),
-                hostController.view.widthAnchor.constraint(equalTo: window.widthAnchor, constant: 0),
-                hostController.view.heightAnchor.constraint(equalTo: window.heightAnchor, constant: 0),
-            ])
-            hostController.view.backgroundColor = UIColor.clear
-            
-        }
-    }
-    ///проверить с сервера, нужно ли показать какой-либо алерт, например об outdated app version или тех работы
-    public func checkOnStartAlerts(appID: String){
-        Task{
-            let alert = try await NetworkManager().get_alerts(appID: appID)
-            createOnStartAlert(alert: alert)
-        }
-    }
-    
-    public func createTestTech(code: Int) {
-        let alert: AlertAPIModel
-        switch code {
-        case 0:
-            alert = AlertAPIModel.testValue0
-        case 1:
-            alert = AlertAPIModel.testValue1
-        case 2:
-            alert = AlertAPIModel.testValue2
-        case 3:
-            alert = AlertAPIModel.testValue3
-        case 4:
-            alert = AlertAPIModel.testValue4
-        default:
-            alert = AlertAPIModel.testValue4
-        }
-        createOnStartAlert(alert: alert)
-    }
+//    private func createOnStartAlert(alert: AlertAPIModel){
+//        DispatchQueue.main.async {
+//            //получаем окно
+//            let presentWindow: UIView?
+//            presentWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+//            guard let window = presentWindow else { return }
+//            //если нулевой алерт, то убираем уже существующий по идентификатору
+//            if alert.alertType == .none{
+//                for child in window.subviews{
+//                    if child.accessibilityIdentifier == "pop"{
+//                        child.removeFromSuperview()
+//                    }
+//                }
+//                return
+//            }
+//            //если алерт уже показан - умираем
+//            if window.subviews.contains(where: { (view) -> Bool in
+//                view.accessibilityIdentifier == "pop"
+//            }) {return}
+//            
+//            //создаем контроллер, передаем тип алерта и функцию для закрытия
+//            let hostController = UIHostingController(rootView: OnStartAlertView(alert: alert, close: {
+//                for child in window.subviews{
+//                    if child.accessibilityIdentifier == "pop"{
+//                        child.removeFromSuperview()
+//                    }
+//                }
+//            }))
+//            
+//            //даем идентификатор окну алерта
+//            hostController.view.accessibilityIdentifier = "pop"
+//            hostController.view.translatesAutoresizingMaskIntoConstraints = false
+//            
+//            window.addSubview(hostController.view)
+//            
+//            NSLayoutConstraint.activate([
+//                hostController.view.centerXAnchor.constraint(equalTo: window.centerXAnchor, constant: 0),
+//                hostController.view.centerYAnchor.constraint(equalTo: window.centerYAnchor, constant: 0),
+//                hostController.view.widthAnchor.constraint(equalTo: window.widthAnchor, constant: 0),
+//                hostController.view.heightAnchor.constraint(equalTo: window.heightAnchor, constant: 0),
+//            ])
+//            hostController.view.backgroundColor = UIColor.clear
+//            
+//        }
+//    }
+//    ///проверить с сервера, нужно ли показать какой-либо алерт, например об outdated app version или тех работы
+//    public func checkOnStartAlerts(appID: String){
+//        Task{
+//            let alert = try await NetworkManager().get_alerts(appID: appID)
+//            createOnStartAlert(alert: alert)
+//        }
+//    }
+//    
+//    public func createTestTech(code: Int) {
+//        let alert: AlertAPIModel
+//        switch code {
+//        case 0:
+//            alert = AlertAPIModel.testValue0
+//        case 1:
+//            alert = AlertAPIModel.testValue1
+//        case 2:
+//            alert = AlertAPIModel.testValue2
+//        case 3:
+//            alert = AlertAPIModel.testValue3
+//        case 4:
+//            alert = AlertAPIModel.testValue4
+//        default:
+//            alert = AlertAPIModel.testValue4
+//        }
+//        createOnStartAlert(alert: alert)
+//    }
     
     /// создает окно поверх приложения с html кодом ошибки
     ///  Не появится, если релиз билд

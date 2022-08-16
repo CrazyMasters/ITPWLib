@@ -95,23 +95,9 @@ etyythmetyhkteklhjerjhkjrnhr
                 Text("type 1")
                     .padding()
                     .onTapGesture {
-                        TechAlert().createTestTech(code: 1)
+                        TechnicalAlertManager.shared.tryCreateAlert(.test2)
                     }
-                Text("type 2")
-                    .padding()
-                    .onTapGesture {
-                        TechAlert().createTestTech(code: 2)
-                    }
-                Text("type 3")
-                    .padding()
-                    .onTapGesture {
-                        TechAlert().createTestTech(code: 3)
-                    }
-                Text("type 4")
-                    .padding()
-                    .onTapGesture {
-                        TechAlert().createTestTech(code: 4)
-                    }
+               
             }
             AsyncImage(url: "http://dev1.itpw.ru:8005/media/nomenclatures/%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%20%D1%82%D0%BE%D1%80%D1%86%D0%B5%D0%B2%D1%8B%D1%85%20%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BA%201/2%22%2C%20%D0%B1%D0%B8%D1%82%20%D0%B8%20%D0%B0%D0%BA%D1%81%D0%B5%D1%81%D1%81%D1%83%D0%B0%D1%80%D0%BE%D0%B2%20%D0%B2%20%D0%BA%D0%B5%D0%B9%D1%81%D0%B5%2C%2037%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BC%D0%B5%D1%82%D0%BE%D0%B2%20NPI/photos/nabor_37_instrumentov_npi.png", contentMode: .fill)
                 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 ///показывает сверху на пару секунд текст, масштабируется
-internal struct AlertView: View {
+internal struct TopAlertView: View {
     var text: String
     var close: ()->()
     @Environment(\.colorScheme) var colorScheme
@@ -49,6 +49,6 @@ internal struct AlertView: View {
 
 struct AlertView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertView(text: "BigText", close: {print("cuck")})
+        TopAlertView(text: "BigText", close: {print("cuck")})
     }
 }

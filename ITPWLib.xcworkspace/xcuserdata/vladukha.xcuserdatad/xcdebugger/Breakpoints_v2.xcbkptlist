@@ -3,4 +3,78 @@
    uuid = "6C37DE66-0926-4942-936E-69CD25BCD620"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5249E26-02A9-409A-BD62-80662FC1BD1B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ITPWLib/Technical Alerts/TechnicalAlertManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "closeAlert(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "898990A0-A630-4BCA-A214-5F215CF9844B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "ITPWLib/Technical Alerts/TechnicalAlertManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "closeAlert(_:)"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po child.accessibilityIdentifier ?? &quot;no&quot;">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+            <Locations>
+               <Location
+                  uuid = "898990A0-A630-4BCA-A214-5F215CF9844B - 12db6a2cc4c96bd3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in ITPWLib.TechnicalAlertManager.closeAlert(Swift.Optional&lt;Swift.Int&gt;) -&gt; ()"
+                  moduleName = "ITPWLib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladukha/Developer/ITPWLib/ITPWLib/Technical%20Alerts/TechnicalAlertManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1360">
+               </Location>
+               <Location
+                  uuid = "898990A0-A630-4BCA-A214-5F215CF9844B - 12db6a2cc4c96bd3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in ITPWLib.TechnicalAlertManager.closeAlert(Swift.Optional&lt;Swift.Int&gt;) -&gt; ()"
+                  moduleName = "ITPWLib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladukha/Developer/ITPWLib/ITPWLib/Technical%20Alerts/TechnicalAlertManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1408">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
