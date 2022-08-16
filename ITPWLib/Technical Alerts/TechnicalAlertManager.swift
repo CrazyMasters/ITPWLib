@@ -8,13 +8,15 @@
 import Foundation
 import UIKit
 import SwiftUI
-public class TechnicalAlertManager{
-    private init(){}
+public final class TechnicalAlertManager{
+    public init(){}
     public static let shared = TechnicalAlertManager()
     private var cache: [TechnicalAlert] = []
     
     public func tryCreateAlert(_ alert: TechnicalAlert){
-        
+        if self.cache.contains(where: {$0.id == alert.id}) && !alert.required{
+            return
+        }
         DispatchQueue.main.async {
             let presentWindow: UIView?
             presentWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
@@ -36,6 +38,7 @@ public class TechnicalAlertManager{
                 
                 
                 window.addSubview(hostController.view)
+                self.cache.append(alert)
                 hostController.view.alpha = 0
                 UIView.transition(with: hostController.view, duration: 0.5, options: .curveEaseInOut, animations: {
                     hostController.view.alpha = 1
