@@ -26,7 +26,7 @@ public final class TechAlert{
             guard let window = presentWindow else { return }
             //если алерт уже показан - умираем
             if window.subviews.contains(where: { (view) -> Bool in
-                view.accessibilityIdentifier == text
+                view.accessibilityIdentifier == text || view.accessibilityIdentifier?.contains("Alert") == true
             }) {return}
             let hostController = UIHostingController(rootView: TopAlertView(text: text, close: {
                 for child in window.subviews{

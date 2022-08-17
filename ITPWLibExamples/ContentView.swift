@@ -95,7 +95,7 @@ etyythmetyhkteklhjerjhkjrnhr
                 Text("type 1")
                     .padding()
                     .onTapGesture {
-                        TechnicalAlertManager.shared.tryCreateAlert(.test2)
+                        TechnicalAlertManager.shared.tryCreateAlert(.test)
                     }
                
             }

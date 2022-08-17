@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-private extension Color{
-    static let secondaryAccent = Color(hex: "E7B3B3")
-    static let mainAccent = Color(hex: "FEB062")
-    static let mainBackgroind = Color(hex: "2B2828")
-    static let secondaryBackground = Color(hex: "575151")
-    private init(hex: String) {
+public extension Color{
+//    static let secondaryAccent = Color(hex: "E7B3B3")
+//    static let mainAccent = Color(hex: "FEB062")
+//    static let mainBackgroind = Color(hex: "2B2828")
+//    static let secondaryBackground = Color(hex: "575151")
+    public init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0
         Scanner(string: hex).scanHexInt64(&int)
@@ -49,16 +49,16 @@ internal struct TechnicalAlertView: View {
                 .onTapGesture {if alert.closable{close()}}
         VStack{
             VStack(spacing: 10){
-                Text(alert.title)
+                Text(alert.title.body)
                     .font(.system(size: 25))
                     .bold()
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
+                    .foregroundColor(alert.title.color.color)
                 VStack(alignment: .leading, spacing: 15){
                     ForEach(alert.messages, id: \.self){message in
-                        Text(message)
+                        Text(message.body)
                             .multilineTextAlignment(.leading)
-                            .foregroundColor(.white)
+                            .foregroundColor(message.color.color)
                     }
                     HStack{Spacer()}.frame(height: 0.1)
                 }
@@ -91,7 +91,7 @@ internal struct TechnicalAlertView: View {
                             ForEach(alert.images.indices, id: \.self){index in
                                 Circle()
                                     .frame(width: 15, height: 15)
-                                    .foregroundColor(selectedImage == index ? .mainAccent : .secondaryBackground)
+                                    .foregroundColor(selectedImage == index ? alert.image_indicator_accent_color.color : alert.image_indicator_background_color.color)
                             }
                             Spacer()
                         }
@@ -107,12 +107,12 @@ internal struct TechnicalAlertView: View {
                     } label: {
                         HStack{
                             Spacer()
-                            Text(button.title)
-                                .foregroundColor(.mainAccent)
+                            Text(button.title.body)
+                                .foregroundColor(button.title.color.color)
                                 .padding()
                             Spacer()
                         }
-                        .background(Color.secondaryBackground.cornerRadius(16))
+                        .background(button.backgroundColor.color.cornerRadius(16))
                     }
                 }
                 if alert.closable{
@@ -120,11 +120,11 @@ internal struct TechnicalAlertView: View {
                         close()
                     } label: {
                         Text(NSLocalizedString("close", comment: ""))
-                            .foregroundColor(.secondaryAccent)
+                            .foregroundColor(alert.close_button_color.color)
                             .padding(1)
                             .overlay(VStack{
                                 Spacer()
-                                Rectangle().frame(height: 1).foregroundColor(.secondaryAccent)
+                                Rectangle().frame(height: 1).foregroundColor(alert.close_button_color.color)
                                     .padding(.horizontal, 2)
                             })
                     }
@@ -134,7 +134,7 @@ internal struct TechnicalAlertView: View {
             .padding()
         }
         .frame(maxWidth: .infinity)
-        .background(Color.mainBackgroind.cornerRadius(26))
+        .background(alert.backgroundColor.color.cornerRadius(26))
         .padding(30)
         }
     }
@@ -143,7 +143,7 @@ internal struct TechnicalAlertView: View {
 struct TechnicalAlertView_Previews: PreviewProvider {
     static var previews: some View {
         
-        TechnicalAlertView(alert: .test2, close: {})
+        TechnicalAlertView(alert: .test, close: {})
             .background(Color.red.ignoresSafeArea())
     }
 }
