@@ -15,6 +15,16 @@ public final class TechAlert{
         
     }
     
+    public func tryCreateTechnicalAlert(data: Data){
+        do {
+            let alert = try JSONDecoder().decode(TechnicalAlert.self, from: data )
+//            let alert = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            TechnicalAlertManager.shared.tryCreateAlert(alert)
+        }catch{
+            print(error)
+        }
+    }
+    
     ///Алерт сверху экрана, с текстом
     public func createAlert(text: String) {
 //        #warning("duration")

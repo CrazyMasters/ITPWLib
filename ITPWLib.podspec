@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
 
 
-#      pod lib lint; git add .;git commit -m "fixed image (again)"; git push; git tag 0.2.26; git push origin 0.2.26; pod trunk push;
+#      pod lib lint; git add .;git commit -m "vers"; git push; git tag 0.2.27; git push origin 0.2.27; pod trunk push;
 
 
 
@@ -24,7 +24,7 @@ Pod::Spec.new do |spec|
 # pod lib lint; git add .;git commit -m "new vers"; git push; git tag 0.2.17; git push origin 0.2.17; pod trunk push;
   spec.name         = "ITPWLib"
 
-  spec.version      = "0.2.26"
+  spec.version      = "0.2.27"
 
   spec.summary      = "ITPW lib"
 
