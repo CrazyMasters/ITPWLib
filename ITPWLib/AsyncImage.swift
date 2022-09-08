@@ -40,6 +40,9 @@ public struct AsyncImage: View {
     @StateObject private var vm: AsyncImageViewModel
     let contentMode: ContentMode
     let image: String
+
+    
+
     public init(url: String, contentMode: ContentMode){
         self.contentMode = contentMode
         self.image = url

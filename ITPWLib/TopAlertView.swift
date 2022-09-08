@@ -8,10 +8,12 @@
 import SwiftUI
 
 ///показывает сверху на пару секунд текст, масштабируется
-internal struct AlertView: View {
-    @State var text: String
+internal struct TopAlertView: View {
+    var text: String
     var close: ()->()
+    @Environment(\.colorScheme) var colorScheme
     private func removeView(){
+//        #warning("переделать исчезновение вью через бул")
         withAnimation {
             offset = -1000.0
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
@@ -25,16 +27,13 @@ internal struct AlertView: View {
         VStack{
             Text(text)
                 .padding()
-                .foregroundColor(.black)
-                .background(Color.white)
+                .foregroundColor(.primary)
+                .background(colorScheme == .dark ? Color(UIColor.darkGray) : .white)
                 .multilineTextAlignment(.center)
                 .cornerRadius(10)
-                .shadow(color: .black, radius: 5, x: 0, y: 0)
+                .shadow(color: .black.opacity(0.6), radius: 5, x: 0, y: 0)
                 .offset(x: 0, y: offset)
                 .animation(.spring())
-                .onTapGesture {
-//                   removeView()
-                }
             Spacer()
         }
         .onAppear(perform: {
@@ -42,12 +41,7 @@ internal struct AlertView: View {
                 offset = 0
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                withAnimation {
-                    offset = -1000.0
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    self.close()
-                }
+                removeView()
             }
         })
     }
@@ -55,6 +49,6 @@ internal struct AlertView: View {
 
 struct AlertView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertView(text: "BigText", close: {print("cuck")})
+        TopAlertView(text: "BigText", close: {print("cuck")})
     }
 }

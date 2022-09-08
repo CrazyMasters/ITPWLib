@@ -21,13 +21,14 @@
 		6162058527E85FC700D09D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6162058427E85FC700D09D3B /* Assets.xcassets */; };
 		6162058827E85FC700D09D3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6162058727E85FC700D09D3B /* Preview Assets.xcassets */; };
 		6162058D27E8601F00D09D3B /* TechAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162058C27E8601F00D09D3B /* TechAlert.swift */; };
+		6173C2D0287C052B006CEB6E /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6173C2CF287C052B006CEB6E /* CustomSlider.swift */; };
 		6188089627F19E65004F3E54 /* View Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6188089527F19E65004F3E54 /* View Extensions.swift */; };
-		619292BA27EB05C400E0526A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619292B927EB05C400E0526A /* AlertView.swift */; };
-		619292BE27EB49D700E0526A /* OnStartAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619292BD27EB49D700E0526A /* OnStartAlertView.swift */; };
-		619292C027EB49E700E0526A /* OnStartAlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619292BF27EB49E700E0526A /* OnStartAlertViewModel.swift */; };
+		619292BA27EB05C400E0526A /* TopAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619292B927EB05C400E0526A /* TopAlertView.swift */; };
 		619292C327EB54B200E0526A /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619292C227EB54B200E0526A /* AsyncImage.swift */; };
 		619292C527EB559D00E0526A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619292C427EB559D00E0526A /* NetworkManager.swift */; };
-		61B384DF27EDB81900F592D6 /* OnStartAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B384DE27EDB81900F592D6 /* OnStartAlertModel.swift */; };
+		61DB402028ABC2CB003CA19D /* TechnicalAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DB401F28ABC2CB003CA19D /* TechnicalAlertView.swift */; };
+		61DB402228ABC30C003CA19D /* TechnicalAlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DB402128ABC30C003CA19D /* TechnicalAlertModel.swift */; };
+		61DB402428ABCE13003CA19D /* TechnicalAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DB402328ABCE13003CA19D /* TechnicalAlertManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,15 +60,16 @@
 		6162058427E85FC700D09D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6162058727E85FC700D09D3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6162058C27E8601F00D09D3B /* TechAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechAlert.swift; sourceTree = "<group>"; };
+		6173C2CF287C052B006CEB6E /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		6188089527F19E65004F3E54 /* View Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View Extensions.swift"; sourceTree = "<group>"; };
-		619292B927EB05C400E0526A /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		619292BD27EB49D700E0526A /* OnStartAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnStartAlertView.swift; sourceTree = "<group>"; };
-		619292BF27EB49E700E0526A /* OnStartAlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnStartAlertViewModel.swift; sourceTree = "<group>"; };
+		619292B927EB05C400E0526A /* TopAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlertView.swift; sourceTree = "<group>"; };
 		619292C227EB54B200E0526A /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		619292C427EB559D00E0526A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		619292C627EB5C3000E0526A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		619292C727EB5C8300E0526A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		61B384DE27EDB81900F592D6 /* OnStartAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnStartAlertModel.swift; sourceTree = "<group>"; };
+		61DB401F28ABC2CB003CA19D /* TechnicalAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalAlertView.swift; sourceTree = "<group>"; };
+		61DB402128ABC30C003CA19D /* TechnicalAlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalAlertModel.swift; sourceTree = "<group>"; };
+		61DB402328ABCE13003CA19D /* TechnicalAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalAlertManager.swift; sourceTree = "<group>"; };
 		7DF38E17B7104B5C64E4293B /* Pods-ITPWLib-ITPWLibTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITPWLib-ITPWLibTests.release.xcconfig"; path = "Target Support Files/Pods-ITPWLib-ITPWLibTests/Pods-ITPWLib-ITPWLibTests.release.xcconfig"; sourceTree = "<group>"; };
 		9AAC0E7457A38A9E5764255C /* libPods-ITPWLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ITPWLib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C865A36B011689821B625951 /* Pods-ITPWLib-ITPWLibTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITPWLib-ITPWLibTests.debug.xcconfig"; path = "Target Support Files/Pods-ITPWLib-ITPWLibTests/Pods-ITPWLib-ITPWLibTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,15 +134,16 @@
 				6162056327E85F8A00D09D3B /* ITPWLib.h */,
 				6162056427E85F8A00D09D3B /* ITPWLib.docc */,
 				6162058C27E8601F00D09D3B /* TechAlert.swift */,
+				6173C2CF287C052B006CEB6E /* CustomSlider.swift */,
 				619292C227EB54B200E0526A /* AsyncImage.swift */,
 				614FD1792805B795002EEEB1 /* AnimatedGradient.swift */,
 				6188089527F19E65004F3E54 /* View Extensions.swift */,
 				619292C427EB559D00E0526A /* NetworkManager.swift */,
 				614FD1772805B39E002EEEB1 /* RefreshScrollView.swift */,
-				619292B927EB05C400E0526A /* AlertView.swift */,
-				61B384DE27EDB81900F592D6 /* OnStartAlertModel.swift */,
-				619292BD27EB49D700E0526A /* OnStartAlertView.swift */,
-				619292BF27EB49E700E0526A /* OnStartAlertViewModel.swift */,
+				619292B927EB05C400E0526A /* TopAlertView.swift */,
+				61DB401F28ABC2CB003CA19D /* TechnicalAlertView.swift */,
+				61DB402328ABCE13003CA19D /* TechnicalAlertManager.swift */,
+				61DB402128ABC30C003CA19D /* TechnicalAlertModel.swift */,
 			);
 			path = ITPWLib;
 			sourceTree = "<group>";
@@ -427,14 +430,15 @@
 			files = (
 				619292C327EB54B200E0526A /* AsyncImage.swift in Sources */,
 				614FD17A2805B795002EEEB1 /* AnimatedGradient.swift in Sources */,
+				61DB402228ABC30C003CA19D /* TechnicalAlertModel.swift in Sources */,
 				6162058D27E8601F00D09D3B /* TechAlert.swift in Sources */,
+				61DB402428ABCE13003CA19D /* TechnicalAlertManager.swift in Sources */,
 				6162056527E85F8A00D09D3B /* ITPWLib.docc in Sources */,
-				619292BE27EB49D700E0526A /* OnStartAlertView.swift in Sources */,
 				6188089627F19E65004F3E54 /* View Extensions.swift in Sources */,
+				61DB402028ABC2CB003CA19D /* TechnicalAlertView.swift in Sources */,
 				619292C527EB559D00E0526A /* NetworkManager.swift in Sources */,
-				619292C027EB49E700E0526A /* OnStartAlertViewModel.swift in Sources */,
-				61B384DF27EDB81900F592D6 /* OnStartAlertModel.swift in Sources */,
-				619292BA27EB05C400E0526A /* AlertView.swift in Sources */,
+				6173C2D0287C052B006CEB6E /* CustomSlider.swift in Sources */,
+				619292BA27EB05C400E0526A /* TopAlertView.swift in Sources */,
 				614FD1782805B39E002EEEB1 /* RefreshScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

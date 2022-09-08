@@ -12,11 +12,18 @@ struct ContentView: View {
     @State private var loading = false
     @State private var alert = false
     @State private var showingLoading = false
+
     @State private var image = false
+
+    @State private var value: Double = 30
+
     init(){
         URLCache.shared.removeAllCachedResponses()
     }
     var body: some View {
+        CSlider(minValue: 30, maxValue: 100, value: $value, step: 10, background: .gray, foreground: .red, withAnimation: true, slider: VStack{
+            Rectangle().fill(Color.green).frame(width: 30, height: 10)
+        })
         RefreshScrollView(showing: $showingLoading, onRefresh: {
             print("reload")
             DispatchQueue.main.asyncAfter(deadline: .now()+1) {
@@ -59,6 +66,10 @@ struct ContentView: View {
                 .cornerRadius(15)
                 .padding()
             }
+            
+//            CSlider(minValue: 0, maxValue: 100, value: $value, step: 1, sliderColor: .red, background: .gray, foreground: .red, slider: VStack{
+//                Capsule().fill(Color.green).frame(width: 30, height: 15)
+//            })
             HStack(){
                 Spacer()
             }
@@ -88,23 +99,9 @@ etyythmetyhkteklhjerjhkjrnhr
                 Text("type 1")
                     .padding()
                     .onTapGesture {
-                        TechAlert().createTestTech(code: 1)
+                        TechnicalAlertManager.shared.tryCreateAlert(.test)
                     }
-                Text("type 2")
-                    .padding()
-                    .onTapGesture {
-                        TechAlert().createTestTech(code: 2)
-                    }
-                Text("type 3")
-                    .padding()
-                    .onTapGesture {
-                        TechAlert().createTestTech(code: 3)
-                    }
-                Text("type 4")
-                    .padding()
-                    .onTapGesture {
-                        TechAlert().createTestTech(code: 4)
-                    }
+               
             }
             AsyncImage(url: image ? "https://developer.apple.com/news/images/og/ios-16-og.jpg" : "https://cdn.mos.cms.futurecdn.net/5mVLdBbW2PZdVBQtfeUn28.jpg", contentMode: .fill)
                 

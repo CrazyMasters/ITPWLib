@@ -122,13 +122,13 @@ internal class NetworkManager{
     }
 
     
-    
-    ///получаем uiimage из даты по юрлу
-    func get_alerts(appID: String) async throws -> AlertAPIModel{
-        guard let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {throw APIError.detail(text: "")}
-        let params: Parameters = ["app_id" : appID, "app_version" : appVersion]
-        let data = try await request(url: "\(NetworkManager.AlertHost)get_alert/", method: .get, params: params) as AlertAPIModel
-        return data
-          
-    }
+//
+//    ///получаем uiimage из даты по юрлу
+//    func get_alerts(appID: String) async throws -> AlertAPIModel{
+//        guard let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {throw APIError.detail(text: "")}
+//        let params: Parameters = ["app_id" : appID, "app_version" : appVersion]
+//        let data = try await request(url: "\(NetworkManager.AlertHost)get_alert/", method: .get, params: params) as AlertAPIModel
+//        return data
+//
+//    }
 }
