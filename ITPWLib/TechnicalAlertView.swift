@@ -12,7 +12,7 @@ public extension Color{
 //    static let mainAccent = Color(hex: "FEB062")
 //    static let mainBackgroind = Color(hex: "2B2828")
 //    static let secondaryBackground = Color(hex: "575151")
-    public init(hex: String) {
+    init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0
         Scanner(string: hex).scanHexInt64(&int)
