@@ -8,6 +8,13 @@
 # pod lib lint; git add .;git commit -m "new vers"; git push; git tag 0.2.12; git push origin 0.2.12; pod trunk push;
 Pod::Spec.new do |spec|
 
+
+
+#      pod lib lint; git add .;git commit -m "fixed image (again)"; git push; git tag 0.2.15; git push origin 0.2.15; pod trunk push;
+
+
+
+
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  These will help people to find your library, and whilst it
@@ -16,7 +23,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "ITPWLib"
-  spec.version      = "0.2.14"
+  spec.version      = "0.2.15"
   spec.summary      = "ITPW lib"
 
   # This description is used to generate tags and improve search results.

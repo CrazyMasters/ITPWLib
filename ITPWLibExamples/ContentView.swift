@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var loading = false
     @State private var alert = false
     @State private var showingLoading = false
+    @State private var image = false
     init(){
         URLCache.shared.removeAllCachedResponses()
     }
@@ -105,13 +106,17 @@ etyythmetyhkteklhjerjhkjrnhr
                         TechAlert().createTestTech(code: 4)
                     }
             }
-            AsyncImage(url: "http://dev1.itpw.ru:8005/media/nomenclatures/%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%20%D1%82%D0%BE%D1%80%D1%86%D0%B5%D0%B2%D1%8B%D1%85%20%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BA%201/2%22%2C%20%D0%B1%D0%B8%D1%82%20%D0%B8%20%D0%B0%D0%BA%D1%81%D0%B5%D1%81%D1%81%D1%83%D0%B0%D1%80%D0%BE%D0%B2%20%D0%B2%20%D0%BA%D0%B5%D0%B9%D1%81%D0%B5%2C%2037%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BC%D0%B5%D1%82%D0%BE%D0%B2%20NPI/photos/nabor_37_instrumentov_npi.png", contentMode: .fill)
+            AsyncImage(url: image ? "https://developer.apple.com/news/images/og/ios-16-og.jpg" : "https://cdn.mos.cms.futurecdn.net/5mVLdBbW2PZdVBQtfeUn28.jpg", contentMode: .fill)
                 
                 .frame(width: 80, height: 150)
                 .background(Color.blue)
                 .cornerRadius(10)
                 
                 .loading(isActive: loading)
+                .onTapGesture {
+                    image.toggle()
+                    print("yeah")
+                }
             HStack{
                 Text("Category")
                     .font(.title2)
