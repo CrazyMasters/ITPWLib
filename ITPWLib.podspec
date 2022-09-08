@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
 
 
-#      pod lib lint; git add .;git commit -m "fixed image (again)"; git push; git tag 0.2.15; git push origin 0.2.15; pod trunk push;
+#      pod lib lint; git add .;git commit -m "fixed image (again)"; git push; git tag 0.2.25; git push origin 0.2.25; pod trunk push;
 
 
 
@@ -23,11 +23,9 @@ Pod::Spec.new do |spec|
   #
 # pod lib lint; git add .;git commit -m "new vers"; git push; git tag 0.2.17; git push origin 0.2.17; pod trunk push;
   spec.name         = "ITPWLib"
-<<<<<<< HEAD
-  spec.version      = "0.2.15"
-=======
-  spec.version      = "0.2.23"
->>>>>>> 34fe734353ac4a2a2a7067d3b709219f88197268
+
+  spec.version      = "0.2.25"
+
   spec.summary      = "ITPW lib"
 
   # This description is used to generate tags and improve search results.
