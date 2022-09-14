@@ -107,8 +107,8 @@ internal class NetworkManager{
     
     ///получаем uiimage из даты по юрлу
     func getImage(url: String) async throws -> UIImage{
-        
-        let request = AF.request("\(url)", method: .get)
+        let appToken = Bundle.main.object(forInfoDictionaryKey: "AppToken") as? String ?? ""
+        let request = AF.request("\(url)", method: .get, headers: ["AppToken" : appToken])
 
             let data = try await request.serializingData().value
             if let image = UIImage(data: data){
