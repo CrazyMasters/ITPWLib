@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Combine
+import Foundation
 
 internal class AsyncImageViewModel: ObservableObject{
     @Published var image: UIImage?
@@ -37,30 +39,29 @@ internal class AsyncImageViewModel: ObservableObject{
 }
 ///async image that gets the image from url, saving in cache and doing it in async, supports ios 14
 public struct AsyncImage: View {
-    @StateObject private var vm: AsyncImageViewModel
     let contentMode: ContentMode
     let image: String
 
     
 
     public init(url: String, contentMode: ContentMode){
+    print(url)
         self.contentMode = contentMode
         self.image = url
-        self._vm = StateObject(wrappedValue: AsyncImageViewModel(url: url))
     }
+    //https://www.vadimbulavin.com/asynchronous-swiftui-image-loading-from-url-with-combine-and-swift/
     public var body: some View {
             Color.clear
                 .overlay(Group{
-                    if vm.image != nil{
-                        Image(uiImage: vm.image!)
-                            .resizable()
-                            .aspectRatio(contentMode: contentMode)
+                    if let url = URL(string: image){
+                        AsynImage(url: url, placeholder: {Text(" ")}) .aspectRatio(contentMode: contentMode)
+                            .id(image)
+                            
+                            
+                            //.transition(.opacity)
                     }
                 })
-                .onChange(of: image) { newValue in
-                    vm.image = nil
-                    vm.getImage(url: image)
-                }
+               
     }
 }
 
@@ -72,3 +73,68 @@ struct AsyncImage_Previews: PreviewProvider {
     }
 }
 
+
+
+class ImageLoader: ObservableObject {
+    @Published var image: UIImage?
+    let url: URL
+
+    init(url: URL) {
+        self.url = url
+    }
+
+    deinit {
+        cancel()
+    }
+    
+    private var cancellable: AnyCancellable?
+
+        func load() {
+            cancellable = URLSession.shared.dataTaskPublisher(for: url)
+                .map { UIImage(data: $0.data) }
+                .replaceError(with: nil)
+                .receive(on: DispatchQueue.main)
+                .sink { [weak self] imag in
+                    withAnimation{
+                        self?.image = imag
+                    }
+                    
+                }
+        }
+        
+        func cancel() {
+            cancellable?.cancel()
+        }
+}
+
+struct AsynImage<Placeholder: View>: View {
+    @StateObject private var loader: ImageLoader
+    private let placeholder: Placeholder
+    
+    init(url: URL, @ViewBuilder placeholder: () -> Placeholder) {
+        self.placeholder = placeholder()
+        _loader = StateObject(wrappedValue: ImageLoader(url: url))
+    }
+    
+    var body: some View {
+        content
+            .transition(.opacity)
+            .animation(.default, value: loader.url)
+            .onAppear(perform: loader.load)
+    }
+    
+    private var content: some View {
+        Group {
+            if loader.image != nil {
+                Image(uiImage: loader.image!)
+                    .resizable()
+                    .transition(.opacity)
+            } else {
+                placeholder
+                    .transition(.opacity)
+                   
+            }
+        }
+        .animation(.default, value: loader.image)
+    }
+}

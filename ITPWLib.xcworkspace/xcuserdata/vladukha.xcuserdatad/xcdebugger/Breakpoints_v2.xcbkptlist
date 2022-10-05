@@ -76,5 +76,165 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CCF72639-8A71-4F75-89AF-991CC0D950B1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "ITPWLib/AsyncImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "init(url:contentMode:)"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.Sound">
+                  <ActionContent
+                     soundName = "Purr">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+            <Locations>
+               <Location
+                  uuid = "CCF72639-8A71-4F75-89AF-991CC0D950B1 - 973245aa3ae96648"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ITPWLib.AsyncImage.body.getter : some"
+                  moduleName = "ITPWLib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladukha/Developer/ITPWLib/ITPWLib/AsyncImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "720">
+               </Location>
+               <Location
+                  uuid = "CCF72639-8A71-4F75-89AF-991CC0D950B1 - c5e7fab9d561c82b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ITPWLib.AsyncImage.init(url: Swift.String, contentMode: SwiftUI.ContentMode) -&gt; ITPWLib.AsyncImage"
+                  moduleName = "ITPWLib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladukha/Developer/ITPWLib/ITPWLib/AsyncImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "304">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF1D404E-9EAE-4A55-A064-84E7D44D8CCB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "ITPWLib/AsyncImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "init(url:contentMode:)"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po url">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+            <Locations>
+               <Location
+                  uuid = "CF1D404E-9EAE-4A55-A064-84E7D44D8CCB - b402931a2006d177"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt; in ITPWLib.AsyncImage.body.getter : some"
+                  moduleName = "ITPWLib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladukha/Developer/ITPWLib/ITPWLib/AsyncImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1440">
+               </Location>
+               <Location
+                  uuid = "CF1D404E-9EAE-4A55-A064-84E7D44D8CCB - c5e7fab9d561c804"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ITPWLib.AsyncImage.init(url: Swift.String, contentMode: SwiftUI.ContentMode) -&gt; ITPWLib.AsyncImage"
+                  moduleName = "ITPWLib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladukha/Developer/ITPWLib/ITPWLib/AsyncImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "296">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B0AAB05-66E7-44B3-B3FC-AA4233AB1BAA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ITPWLib/AsyncImage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "1B0AAB05-66E7-44B3-B3FC-AA4233AB1BAA - b3d30262d32faf00"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Swift.Optional&lt;ITPWLib.AsynImage&lt;SwiftUI.Text&gt;&gt; in ITPWLib.AsyncImage.body.getter : some"
+                  moduleName = "ITPWLib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladukha/Developer/ITPWLib/ITPWLib/AsyncImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "492">
+               </Location>
+               <Location
+                  uuid = "1B0AAB05-66E7-44B3-B3FC-AA4233AB1BAA - 6215349709271181"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.Text in closure #1 () -&gt; Swift.Optional&lt;ITPWLib.AsynImage&lt;SwiftUI.Text&gt;&gt; in ITPWLib.AsyncImage.body.getter : some"
+                  moduleName = "ITPWLib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladukha/Developer/ITPWLib/ITPWLib/AsyncImage.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
