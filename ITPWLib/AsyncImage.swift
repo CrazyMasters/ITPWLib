@@ -89,18 +89,23 @@ class ImageLoader: ObservableObject {
     
     private var cancellable: AnyCancellable?
 
-        func load() {
-            cancellable = URLSession.shared.dataTaskPublisher(for: url)
-                .map { UIImage(data: $0.data) }
-                .replaceError(with: nil)
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] imag in
-                    withAnimation{
-                        self?.image = imag
-                    }
-                    
+    func load() {
+        let session = URLSession.shared
+        var request = URLRequest(url: url)
+        let appToken = Bundle.main.object(forInfoDictionaryKey: "AppToken") as? String ?? ""
+        request.httpMethod = "GET"
+        request.addValue(appToken, forHTTPHeaderField: "AppToken")
+        cancellable = session.dataTaskPublisher(for: request)
+            .map { UIImage(data: $0.data) }
+            .replaceError(with: nil)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] imag in
+                withAnimation{
+                    self?.image = imag
                 }
-        }
+                
+            }
+    }
         
         func cancel() {
             cancellable?.cancel()

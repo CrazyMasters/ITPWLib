@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
 
 
-#      pod lib lint; git add .;git commit -m "vers"; git push; git tag 0.2.29; git push origin 0.2.29; pod trunk push;
+#      pod lib lint; git add .;git commit -m "vers"; git push; git tag 0.2.30; git push origin 0.2.30; pod trunk push;
 
 
 
@@ -21,10 +21,9 @@ Pod::Spec.new do |spec|
   #  can feel like a chore to fill in it's definitely to your advantage. The
   #  summary should be tweet-length, and the description more in depth.
   #
-# pod lib lint; git add .;git commit -m "new vers"; git push; git tag 0.2.17; git push origin 0.2.17; pod trunk push;
   spec.name         = "ITPWLib"
 
-  spec.version      = "0.2.29"
+  spec.version      = "0.2.30"
 
   spec.summary      = "ITPW lib"
 
