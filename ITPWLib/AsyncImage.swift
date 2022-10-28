@@ -100,8 +100,10 @@ class ImageLoader: ObservableObject {
             .replaceError(with: nil)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] imag in
-                withAnimation{
-                    self?.image = imag
+                if self?.image == nil{
+                    withAnimation{
+                        self?.image = imag
+                    }
                 }
                 
             }
