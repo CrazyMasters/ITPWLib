@@ -45,22 +45,35 @@ public struct AsyncImage: View {
     
 
     public init(url: String, contentMode: ContentMode){
-    print(url)
+    
         self.contentMode = contentMode
         self.image = url
     }
     //https://www.vadimbulavin.com/asynchronous-swiftui-image-loading-from-url-with-combine-and-swift/
     public var body: some View {
+//        Color.clear
+//            .overlay(Group{
+//                if let url = URL(string: image){
+//                    AsynImage(url: url, placeholder: {Text(" ")}) .aspectRatio(contentMode: contentMode)
+//                        .id(image)
+//
+//                        //.transition(.opacity)
+//                }
+//            })
+        GeometryReader{geo in
             Color.clear
                 .overlay(Group{
                     if let url = URL(string: image){
                         AsynImage(url: url, placeholder: {Text(" ")}) .aspectRatio(contentMode: contentMode)
                             .id(image)
-                            
-                            
+                            .frame(width: geo.size.width, height: geo.size.height)
+                            .clipped()
                             //.transition(.opacity)
                     }
                 })
+                .allowsHitTesting(false)
+        }
+        
                
     }
 }
@@ -128,6 +141,7 @@ struct AsynImage<Placeholder: View>: View {
             .transition(.opacity)
             .animation(.default, value: loader.url)
             .onAppear(perform: loader.load)
+            
     }
     
     private var content: some View {
