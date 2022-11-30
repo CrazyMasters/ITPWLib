@@ -64,9 +64,36 @@ public struct CSlider<Content: View>: View {
         self.animate = withAnimation
     }
     
-  
-    
-    
+/// рассчет value при перемещении капсуля слайдера
+    func capsuleValue(geo: GeometryProxy, newValue: DragGesture.Value) -> Double {
+        let values = maxValue - minValue
+        let singlePersent = geo.size.width / 100
+        let tappedPersent = (newValue.location.x / singlePersent) / 100
+        let draggedOnValue = (values * tappedPersent) + minValue
+        let remainderFromDivider = draggedOnValue.truncatingRemainder(dividingBy: step)
+        let snappedValue = remainderFromDivider < step/2 ? (draggedOnValue - remainderFromDivider) : (draggedOnValue - remainderFromDivider) + step
+        return snappedValue
+    }
+/// рассчет цветной линии(после capsule)
+    func lineValue(newValue: DragGesture.Value) {
+        if newValue.location.x >= sliderHalfWidth,
+           newValue.location.x <= sliderWidth + sliderHalfWidth {
+            let percent = (maxValue-minValue) / sliderWidth
+            let coord = (newValue.location.x-sliderHalfWidth) * percent
+            let znach = coord.rounded()
+            let remaining = znach.truncatingRemainder(dividingBy: step)
+            let closestValue = remaining < (step / 2) ? (znach - remaining) : ((znach - remaining) + step)
+            if animate{
+                withAnimation(.spring()) {
+                    internalValue = closestValue
+                    value = internalValue + minValue
+                }
+            }else{
+                internalValue = closestValue
+                value = internalValue + minValue
+            }
+        }
+    }
     
     public var body: some View {
         ZStack(alignment: .leading) {
@@ -102,14 +129,8 @@ public struct CSlider<Content: View>: View {
                                 .simultaneousGesture(
                                     DragGesture(minimumDistance: 0, coordinateSpace: .local)
                                     .onChanged({ newValue in
-                                        let values = (maxValue-minValue)
-                                        let singlePercent = geo.size.width / 100
-                                        let tappedPercent = (newValue.location.x / singlePercent) / 100
-                                        let draggedOnValue = (values * tappedPercent) + minValue
-                                        let remainderFromDivider = draggedOnValue.truncatingRemainder(dividingBy: step)
-                                        let snappedValue = remainderFromDivider < step/2 ? (draggedOnValue - remainderFromDivider) : (draggedOnValue - remainderFromDivider) + step
                                         withAnimation {
-                                            value = snappedValue
+                                            value = capsuleValue(geo: geo, newValue: newValue)
                                         }
                                     })
                                 )
@@ -140,25 +161,7 @@ public struct CSlider<Content: View>: View {
             
                 .offset(x: (stepCoord * internalValue) + sliderHalfWidth)
                 .gesture(DragGesture(minimumDistance: 2, coordinateSpace: .local).onChanged({ newValue in
-                    
-                    if newValue.location.x >= sliderHalfWidth,
-                       newValue.location.x <= sliderWidth + sliderHalfWidth {
-                        let percent = (maxValue-minValue) / sliderWidth
-                        let coord = (newValue.location.x-sliderHalfWidth) * percent
-                        let znach = coord.rounded()
-                        let remaining = znach.truncatingRemainder(dividingBy: step)
-                        let closestValue = remaining < (step / 2) ? (znach - remaining) : ((znach - remaining) + step)
-                        if animate{
-                            withAnimation(.spring()) {
-                                internalValue = closestValue
-                                value = internalValue + minValue
-                            }
-                        }else{
-                            internalValue = closestValue
-                            value = internalValue + minValue
-                        }
-                        
-                    }
+                    lineValue(newValue: newValue)
                 }))
                 .onChange(of: value) { newValue in
                     if animate{

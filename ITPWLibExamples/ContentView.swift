@@ -21,9 +21,14 @@ struct ContentView: View {
         URLCache.shared.removeAllCachedResponses()
     }
     var body: some View {
-        CSlider(minValue: 30, maxValue: 100, value: $value, step: 10, background: .gray, foreground: .red, withAnimation: true, slider: VStack{
-            Rectangle().fill(Color.green).frame(width: 30, height: 10)
-        })
+        VStack {
+            CSlider(minValue: 10, maxValue: 1000, value: $value, step: 10, background: .gray, foreground: .red, withAnimation: true, slider: VStack{
+                Rectangle().fill(Color.green).frame(width: 30, height: 10)
+            })
+            Text("slider value: \(value)")
+        }
+        .padding(.horizontal)
+        
         RefreshScrollView(showing: $showingLoading, onRefresh: {
             print("reload")
             DispatchQueue.main.asyncAfter(deadline: .now()+1) {
