@@ -97,12 +97,6 @@ internal class NetworkManager{
     
     private func saveCachedImage(url: String, image: UIImage){
         NetworkManager.imageCache.setObject(image, forKey: url as AnyObject)
-//        guard let Url = URL(string: url) else {return}
-//        let request = URLRequest(url: Url)
-//        let response = URLResponse(url: Url, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
-//        let cachedData = CachedURLResponse(response: response, data: image.pngData()!)//.jpegData(compressionQuality: 0.7)!)
-//
-//        URLCache.shared.storeCachedResponse(cachedData, for: request)
     }
     
     ///получаем uiimage из даты по юрлу
@@ -122,13 +116,4 @@ internal class NetworkManager{
     }
 
     
-//
-//    ///получаем uiimage из даты по юрлу
-//    func get_alerts(appID: String) async throws -> AlertAPIModel{
-//        guard let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {throw APIError.detail(text: "")}
-//        let params: Parameters = ["app_id" : appID, "app_version" : appVersion]
-//        let data = try await request(url: "\(NetworkManager.AlertHost)get_alert/", method: .get, params: params) as AlertAPIModel
-//        return data
-//
-//    }
 }

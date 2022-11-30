@@ -8,10 +8,7 @@
 import Foundation
 import SwiftUI
 
-//static let secondaryAccent = Color(hex: "E7B3B3")
-//static let mainAccent = Color(hex: "FEB062")
-//static let mainBackgroind = Color(hex: "2B2828")
-//static let secondaryBackground = Color(hex: "575151")
+
 public struct AlertColor: Codable, Hashable, Equatable{
     public let light: String
     public let dark: String

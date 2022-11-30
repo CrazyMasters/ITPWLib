@@ -8,10 +8,6 @@
 import SwiftUI
 
 public extension Color{
-//    static let secondaryAccent = Color(hex: "E7B3B3")
-//    static let mainAccent = Color(hex: "FEB062")
-//    static let mainBackgroind = Color(hex: "2B2828")
-//    static let secondaryBackground = Color(hex: "575151")
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0

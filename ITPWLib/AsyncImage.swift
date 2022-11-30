@@ -51,15 +51,6 @@ public struct AsyncImage: View {
     }
     //https://www.vadimbulavin.com/asynchronous-swiftui-image-loading-from-url-with-combine-and-swift/
     public var body: some View {
-//        Color.clear
-//            .overlay(Group{
-//                if let url = URL(string: image){
-//                    AsynImage(url: url, placeholder: {Text(" ")}) .aspectRatio(contentMode: contentMode)
-//                        .id(image)
-//
-//                        //.transition(.opacity)
-//                }
-//            })
         GeometryReader{geo in
             Color.clear
                 .overlay(Group{
