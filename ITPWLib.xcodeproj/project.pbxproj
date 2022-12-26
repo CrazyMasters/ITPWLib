@@ -12,8 +12,6 @@
 		45B37335D06AF246FFCBD91B /* libPods-ITPWLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAC0E7457A38A9E5764255C /* libPods-ITPWLib.a */; };
 		614FD1782805B39E002EEEB1 /* RefreshScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614FD1772805B39E002EEEB1 /* RefreshScrollView.swift */; };
 		614FD17A2805B795002EEEB1 /* AnimatedGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614FD1792805B795002EEEB1 /* AnimatedGradient.swift */; };
-		6155B77628EDCC590028AC98 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6155B77528EDCC590028AC98 /* URLImage */; };
-		6155B77828EDCC590028AC98 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = 6155B77728EDCC590028AC98 /* URLImageStore */; };
 		6162056527E85F8A00D09D3B /* ITPWLib.docc in Sources */ = {isa = PBXBuildFile; fileRef = 6162056427E85F8A00D09D3B /* ITPWLib.docc */; };
 		6162056B27E85F8A00D09D3B /* ITPWLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6162056027E85F8A00D09D3B /* ITPWLib.framework */; };
 		6162057027E85F8A00D09D3B /* ITPWLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162056F27E85F8A00D09D3B /* ITPWLibTests.swift */; };
@@ -83,8 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6155B77628EDCC590028AC98 /* URLImage in Frameworks */,
-				6155B77828EDCC590028AC98 /* URLImageStore in Frameworks */,
 				45B37335D06AF246FFCBD91B /* libPods-ITPWLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,8 +229,6 @@
 			);
 			name = ITPWLib;
 			packageProductDependencies = (
-				6155B77528EDCC590028AC98 /* URLImage */,
-				6155B77728EDCC590028AC98 /* URLImageStore */,
 			);
 			productName = ITPWLib;
 			productReference = 6162056027E85F8A00D09D3B /* ITPWLib.framework */;
@@ -309,7 +303,6 @@
 			);
 			mainGroup = 6162055627E85F8A00D09D3B;
 			packageReferences = (
-				6155B77428EDCC590028AC98 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = 6162056127E85F8A00D09D3B /* Products */;
 			projectDirPath = "";
@@ -800,30 +793,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6155B77428EDCC590028AC98 /* XCRemoteSwiftPackageReference "url-image" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6155B77528EDCC590028AC98 /* URLImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6155B77428EDCC590028AC98 /* XCRemoteSwiftPackageReference "url-image" */;
-			productName = URLImage;
-		};
-		6155B77728EDCC590028AC98 /* URLImageStore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6155B77428EDCC590028AC98 /* XCRemoteSwiftPackageReference "url-image" */;
-			productName = URLImageStore;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6162055727E85F8A00D09D3B /* Project object */;
 }
