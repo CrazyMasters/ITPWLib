@@ -50,6 +50,7 @@ class ImageLoader: ObservableObject {
 
     init(url: URL) {
         self.url = url
+        self.load()
     }
 
     deinit {
@@ -90,7 +91,7 @@ struct AsynImage<Placeholder: View>: View {
     init(url: URL, @ViewBuilder placeholder: () -> Placeholder) {
         self.placeholder = placeholder()
         _loader = StateObject(wrappedValue: ImageLoader(url: url))
-        loader.load()
+        
     }
     
     var body: some View {
