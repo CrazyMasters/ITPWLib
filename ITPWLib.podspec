@@ -23,7 +23,7 @@ Pod::Spec.new do |spec|
   #
   spec.name         = "ITPWLib"
 
-  spec.version      = "0.2.34"
+  spec.version      = "0.2.35"
 
   spec.summary      = "ITPW lib"
 
@@ -61,10 +61,10 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "Vladislav Permyakov" => "vladic.p@gmail.com" }
+  # spec.author             = { "Vladislav Permyakov" => "vladic.p@gmail.com" }
   # Or just: spec.author    = "Vladislav Permyakov"
-  # spec.authors            = { "Vladislav Permyakov" => "vladic.p@gmail.com" }
-  # spec.social_media_url   = "https://twitter.com/Vladislav Permyakov"
+  spec.authors            = { "Vladislav Permyakov" => "vladic.p@gmail.com" }
+  
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
