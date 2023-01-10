@@ -24,7 +24,7 @@ Pod::Spec.new do |spec|
   spec.name         = "ITPWLib"
 
 
-  spec.version      = "0.2.36"
+  spec.version      = "0.2.37"
 
 
   spec.summary      = "ITPW lib"
