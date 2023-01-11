@@ -123,17 +123,17 @@ public struct RefreshableScrollView<Progress, Content>: View where Progress: Vie
          VStack{
              content()
          }
-           .alignmentGuide(.top, computeValue: { _ in
-             (state == .loading) ? -threshold + max(0, offset) : 0
-            })
-
+         .padding(.top, (state == .loading) ? abs(-threshold + max(0, offset)) : 0)
+         .animation(.easeInOut, value: state)
+          
           // The loading view. It's offset to the top of the content unless we're loading.
           ZStack {
             Rectangle()
               .foregroundColor(loadingViewBackgroundColor)
               .frame(height: threshold)
             progress(state)
-          }.offset(y: (state == .loading) ? -max(0, offset) : -threshold)
+          }
+          .offset(y: (state == .loading) ? -max(0, offset) : -threshold)
         }
       }
       // Put a fixed PositionIndicator in the background so that we have

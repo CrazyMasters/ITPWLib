@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
 
 
-#      pod lib lint; git add .;git commit -m "vers"; git push; git tag 0.2.36; git push origin 0.2.36; pod trunk push;
+#      pod lib lint; git add .;git commit -m "vers"; git push; git tag 0.2.38; git push origin 0.2.38; pod trunk push;
 
 
 
@@ -24,7 +24,7 @@ Pod::Spec.new do |spec|
   spec.name         = "ITPWLib"
 
 
-  spec.version      = "0.2.37"
+  spec.version      = "0.2.38"
 
 
   spec.summary      = "ITPW lib"
